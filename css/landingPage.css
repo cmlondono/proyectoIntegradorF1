@@ -1,0 +1,442 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fondo-general: #eef4fb;
+  --blanco: #ffffff;
+  --gris-claro: #f5f8ff;
+  --gris-suave: #d9e3f5;
+  --azul-oscuro: #172a4e;
+  --azul-principal: #2b6cf5;
+  --morado-principal: #6d4dff;
+  --violeta-principal: #8b5cf6;
+  --verde-principal: #22c55e;
+  --texto-principal: #0f1830;
+  --texto-secundario: #51607c;
+  --sombra-suave: 0 18px 50px rgba(15, 24, 48, 0.08);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--fondo-general);
+  font-family: 'Poppins', sans-serif;
+  color: var(--texto-principal);
+}
+
+body {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contenedorHeader {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--blanco);
+  box-shadow: 0 10px 30px rgba(15, 24, 48, 0.08);
+  border-radius: 16px;
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+}
+
+.logoMarca {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+.logoTexto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logoTexto img {
+  width: 3.2rem;
+  height: auto;
+  border-radius: 0.8rem;
+}
+
+.menuNavegacion {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.botonInicio {
+  color: var(--texto-principal);
+  font-weight: 600;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.botonInicio:hover {
+  background: rgba(43, 108, 245, 0.08);
+}
+
+.botonRegistro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--blanco);
+  background: var(--azul-principal);
+  font-weight: 600;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.botonRegistro:hover {
+  background: #2157d4;
+  transform: translateY(-1px);
+}
+
+.seccionHero {
+  padding: 4.5rem 0 3rem;
+  background: linear-gradient(180deg, #f4f9ff 0%, #eef4fb 100%);
+}
+
+.contenedorHero {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.textoHero {
+  max-width: 620px;
+}
+
+.tituloPrincipal {
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  margin: 0;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.tituloPrincipal span {
+  color: var(--azul-principal);
+}
+
+.subtituloHero {
+  margin: 1.6rem 0 2.2rem;
+  color: var(--texto-secundario);
+  max-width: 560px;
+  font-size: 1.05rem;
+}
+
+.contenedorBotonesHero {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.botonPrimario,
+.botonSecundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.botonPrimario {
+  background: var(--azul-principal);
+  color: var(--blanco);
+  border: 1px solid transparent;
+}
+
+.botonPrimario:hover {
+  background: #1f53d5;
+}
+
+.botonSecundario {
+  background: transparent;
+  color: var(--azul-principal);
+  border: 1px solid rgba(43, 108, 245, 0.28);
+}
+
+.botonSecundario:hover {
+  background: rgba(43, 108, 245, 0.08);
+}
+
+.imagenHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.imagenHeroElemento {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 28px;
+  object-fit: contain;
+  box-shadow: 0 24px 60px rgba(15, 24, 48, 0.12);
+  transform: translateY(-3px);
+}
+
+.seccionBeneficios {
+  padding: 4rem 0 3rem;
+  background: var(--blanco);
+}
+
+.contenedorTituloBeneficios {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tituloBeneficios {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.subtituloBeneficios {
+  margin: 1rem auto 0;
+  color: var(--texto-secundario);
+  max-width: 540px;
+  font-size: 1rem;
+}
+
+.contenedorBeneficios {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjetaBeneficio {
+  background: #f8fbff;
+  padding: 2rem;
+  border-radius: 22px;
+  box-shadow: 0 12px 34px rgba(43, 108, 245, 0.09);
+  min-height: 220px;
+}
+
+.iconoBeneficio {
+  width: 3.1rem;
+  height: 3.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(43, 108, 245, 0.1);
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+}
+
+.tituloBeneficio {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.descripcionBeneficio {
+  margin: 0;
+  color: var(--texto-secundario);
+  line-height: 1.75;
+}
+
+.seccionServicios {
+  padding: 4rem 0 4.5rem;
+  background: var(--fondo-general);
+}
+
+.contenedorServiciosTexto {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.tituloServicios {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.subtituloServicios {
+  margin: 1rem auto 0;
+  color: var(--texto-secundario);
+  max-width: 520px;
+  font-size: 1rem;
+}
+
+.contenedorServicios {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjetaServicio {
+  background: var(--blanco);
+  padding: 2rem;
+  border-radius: 24px;
+  border-left: 6px solid transparent;
+  box-shadow: var(--sombra-suave);
+}
+
+.tarjetaAhorro {
+  border-color: rgba(43, 108, 245, 0.9);
+}
+
+.tarjetaCorriente {
+  border-color: rgba(109, 77, 255, 0.9);
+}
+
+.tarjetaCredito {
+  border-color: rgba(139, 92, 246, 0.9);
+}
+
+.tarjetaTransferencias {
+  border-color: rgba(34, 197, 94, 0.9);
+}
+
+.tituloServicio {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+
+.descripcionServicio {
+  margin: 0 0 1.5rem;
+  color: var(--texto-secundario);
+  line-height: 1.8;
+}
+
+.listaServicio {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.listaServicio li {
+  position: relative;
+  padding-left: 1.45rem;
+  color: var(--texto-secundario);
+}
+
+.listaServicio li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--azul-principal);
+}
+
+.footerPrincipal {
+  background: #0f1c3f;
+  color: #edf2ff;
+  padding: 3rem 0;
+}
+
+.contenedorFooter {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.columnaFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tituloFooter {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.enlaceFooter {
+  color: #cbd5ff;
+  transition: color 0.2s ease;
+}
+
+.enlaceFooter:hover {
+  color: var(--blanco);
+}
+
+@media (max-width: 1024px) {
+  .contenedorHero,
+  .contenedorBeneficios,
+  .contenedorServicios,
+  .contenedorFooter {
+    width: min(960px, calc(100% - 2rem));
+  }
+}
+
+@media (max-width: 900px) {
+  .contenedorHeader {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  .contenedorHero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .textoHero {
+    align-items: center;
+  }
+
+  .contenedorBotonesHero {
+    justify-content: center;
+  }
+
+  .contenedorBeneficios,
+  .contenedorServicios,
+  .contenedorFooter {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .seccionHero {
+    padding-top: 3rem;
+  }
+
+  .tituloPrincipal {
+    font-size: 2.4rem;
+  }
+
+  .subtituloHero,
+  .subtituloBeneficios,
+  .subtituloServicios {
+    font-size: 0.98rem;
+  }
+
+  .botonInicio,
+  .botonRegistro,
+  .botonPrimario,
+  .botonSecundario {
+    width: 100%;
+  }
+
+  .contenedorBotonesHero {
+    flex-direction: column;
+  }
+}

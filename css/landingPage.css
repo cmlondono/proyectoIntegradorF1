@@ -34,7 +34,7 @@ a {
 }
 
 .contenedorHeader {
-  width: min(1200px, calc(100% - 2rem));
+  width: 100%;
   margin: 0 auto;
   padding: 1rem 0;
   display: flex;
@@ -42,9 +42,9 @@ a {
   justify-content: space-between;
   background: var(--blanco);
   box-shadow: 0 10px 30px rgba(15, 24, 48, 0.08);
-  border-radius: 16px;
+  border-radius: 0;
   position: sticky;
-  top: 1rem;
+  top: 0;
   z-index: 10;
 }
 
@@ -230,18 +230,28 @@ a {
   border-radius: 22px;
   box-shadow: 0 12px 34px rgba(43, 108, 245, 0.09);
   min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
 }
 
 .iconoBeneficio {
-  width: 3.1rem;
-  height: 3.1rem;
+  width: 4.2rem;
+  height: 4.2rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  background: rgba(43, 108, 245, 0.1);
-  margin-bottom: 1.2rem;
-  font-size: 1.25rem;
+  border-radius: 50%;
+  background: rgba(43, 108, 245, 0.12);
+  box-shadow: inset 0 2px 8px rgba(43, 108, 245, 0.08);
+}
+
+.iconoBeneficio img {
+  width: 4.2rem;
+  height: 4.2rem;
+  object-fit: contain;
 }
 
 .tituloBeneficio {
@@ -294,7 +304,7 @@ a {
   box-shadow: var(--sombra-suave);
 }
 
-.tarjetaAhorro {
+/* .tarjetaAhorro {
   border-color: rgba(43, 108, 245, 0.9);
 }
 
@@ -308,7 +318,7 @@ a {
 
 .tarjetaTransferencias {
   border-color: rgba(34, 197, 94, 0.9);
-}
+} */
 
 .tituloServicio {
   margin: 0 0 1rem;
@@ -357,10 +367,37 @@ a {
   gap: 1.5rem;
 }
 
+.footerInferior {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 1.5rem auto 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  color: #cbd5ff;
+}
+
+.footerInferior h5 {
+  margin: 0;
+  font-weight: 500;
+}
+
 .columnaFooter {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+}
+
+.footerMarca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footerMarca img {
+  width: 2.8rem;
+  height: auto;
 }
 
 .tituloFooter {

@@ -38,14 +38,22 @@ a {
   margin: 0 auto;
   padding: 1rem 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   background: var(--blanco);
   box-shadow: 0 10px 30px rgba(15, 24, 48, 0.08);
   border-radius: 0;
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.sub-header{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }
 
 .logoMarca {
@@ -90,16 +98,15 @@ a {
   align-items: center;
   justify-content: center;
   padding: 0.9rem 1.6rem;
-  border-radius: 999px;
+  border-radius: 9px;
   border: 1px solid transparent;
   color: var(--blanco);
-  background: var(--azul-principal);
+  background: linear-gradient(to right, #2b6cf5, rgb(106, 8, 235));
   font-weight: 600;
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
 .botonRegistro:hover {
-  background: #2157d4;
   transform: translateY(-1px);
 }
 
@@ -151,25 +158,25 @@ a {
   align-items: center;
   justify-content: center;
   padding: 1rem 1.8rem;
-  border-radius: 999px;
+  border-radius: 9px;
   font-weight: 600;
   transition: all 0.25s ease;
 }
 
 .botonPrimario {
-  background: var(--azul-principal);
+  background: linear-gradient(to right, #2b6cf5, rgb(106, 8, 235));
   color: var(--blanco);
   border: 1px solid transparent;
 }
 
 .botonPrimario:hover {
-  background: #1f53d5;
+  transform: translateY(-1px);
 }
 
 .botonSecundario {
   background: transparent;
   color: var(--azul-principal);
-  border: 1px solid rgba(43, 108, 245, 0.28);
+  border: 3px solid rgba(43, 108, 245, 0.28);
 }
 
 .botonSecundario:hover {

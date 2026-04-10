@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mi Plata</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+body{
+  background:#f5f7fb;
+  color:#111;
+}
+
+/* HEADER */
+.header{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  padding:0 40px;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  align-items: center;
+}
+
+.sub-header{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.logo{
+  font-weight:700;
+  font-size:18px;
+  color:#2f5bea;
+}
+
+.nav{
+  display:flex;
+  gap:25px;
+  font-size:14px;
+}
+
+.logout{color:#e53935;}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+/* TITULOS */
+.title{
+  font-size:28px;
+  font-weight:700;
+}
+
+.subtitle{
+  margin-top:6px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* TARJETAS */
+.cards{
+  display:flex;
+  gap:24px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.card{
+  flex:1 1 480px;
+  min-height:140px;
+  border-radius:16px;
+  padding:22px 26px;
+  color:white;
+  background:linear-gradient(135deg,#2f5bea,#5f2eea);
+  box-shadow:0 12px 25px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card small{
+  font-size:13px;
+  opacity:.85;
+}
+
+.number{
+  letter-spacing:2px;
+  font-size:15px;
+}
+
+.balance{
+  font-size:22px;
+  font-weight:700;
+}
+
+/* ACCIONES */
+.section-title{
+  margin-top:40px;
+  font-size:18px;
+  font-weight:600;
+}
+
+.actions{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.action-card{
+  height:120px;
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.05);
+}
+
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  margin-bottom:14px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+}
+
+.blue{background:#2f5bea;}
+.green{background:#16a34a;}
+.orange{background:#f97316;}
+.purple{background:#9333ea;}
+.indigo{background:#4f46e5;}
+.pink{background:#ec4899;}
+
+.action-title{
+  font-size:15px;
+  font-weight:600;
+}
+
+.action-sub{
+  font-size:13px;
+  color:#6b7280;
+  margin-top:4px;
+}
+
+/* 📱 TABLET */
+@media (max-width: 1024px){
+
+  .actions{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* 📱 MOBILE */
+@media (max-width: 640px){
+
+  .header{
+    padding:0 20px;
+  }
+
+  .title{
+    font-size:22px;
+  }
+
+  .cards{
+    flex-direction:column;
+  }
+
+  .card{
+    flex:1 1 100%;
+  }
+
+  .actions{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="sub-header">
+  <div class="logo">Mi Plata</div>
+  <div class="nav">
+    <span>Perfil</span>
+    <span class="logout">Cerrar Sesión</span>
+  </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="title">Hola, Juan Pérez 👋</div>
+  <div class="subtitle">Bienvenido a tu panel de control bancario</div>
+
+  <div class="cards">
+    <div class="card">
+      <div>
+        <small>Cuenta de Ahorros</small>
+        <div class="number">****1234</div>
+      </div>
+      <div>
+        <small>Saldo Disponible</small>
+        <div class="balance">$ 5.420.000</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div>
+        <small>Cuenta Corriente</small>
+        <div class="number">****5678</div>
+      </div>
+      <div>
+        <small>Saldo Disponible</small>
+        <div class="balance">$ 2.100.000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Acciones Rápidas</div>
+
+  <div class="actions">
+
+    <div class="action-card">
+      <div class="icon blue">💳</div>
+      <div class="action-title">Consultar Saldo</div>
+      <div class="action-sub">Ver saldo actual</div>
+    </div>
+
+    <div class="action-card">
+      <div class="icon green">⬇</div>
+      <div class="action-title">Consignar Dinero</div>
+      <div class="action-sub">Depositar fondos</div>
+    </div>
+
+    <div class="action-card">
+      <div class="icon orange">⬆</div>
+      <div class="action-title">Retirar Dinero</div>
+      <div class="action-sub">Extraer fondos</div>
+    </div>
+
+    <div class="action-card">
+      <div class="icon purple">⏱</div>
+      <div class="action-title">Ver Movimientos</div>
+      <div class="action-sub">Historial completo</div>
+    </div>
+
+    <div class="action-card">
+      <div class="icon indigo">⇄</div>
+      <div class="action-title">Transferir</div>
+      <div class="action-sub">Enviar dinero</div>
+    </div>
+
+    <div class="action-card">
+      <div class="icon pink">💳</div>
+      <div class="action-title">Tarjeta de Crédito</div>
+      <div class="action-sub">Simular compras</div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

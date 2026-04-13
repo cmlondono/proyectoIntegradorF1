@@ -40,10 +40,11 @@ body {
 
 .logout {
   color: #e53935;
+  text-decoration: none;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -91,6 +92,7 @@ body {
   color: #2f5bea;
   margin-bottom: 12px;
   display: block;
+  height: 20px;
 }
 
 .opts {
@@ -146,6 +148,7 @@ body {
 }
 
 .saldo-card {
+  height: 300px;
   background: linear-gradient(135deg, #2f5bea, #5f2eea);
   border-radius: 16px;
   padding: 30px;

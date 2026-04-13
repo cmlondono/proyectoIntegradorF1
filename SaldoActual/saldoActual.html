@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Plata - Consultar Saldo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../SaldoActual/saldoActual.css">
+</head>
+<body>
+
+<div class="header">
+<div class="sub-header">
+  <div class="logo">Mi Plata</div>
+  <div class="nav">
+    <span>Perfil</span>
+    <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+  </div>
+</div>
+</div>
+
+<div class="container">
+
+  <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+
+  <div class="title">Consultar Saldo</div>
+  <div class="subtitle">Visualiza el saldo de tus cuentas</div>
+
+  <div class="selector">
+    <span class="selector-label">Selecciona una cuenta</span>
+    <div class="opts">
+      <div class="opt active">
+        <div class="opt-name">Cuenta de Ahorros</div>
+        <div class="opt-num">****1234</div>
+      </div>
+      <div class="opt">
+        <div class="opt-name">Cuenta Corriente</div>
+        <div class="opt-num">****5678</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="saldo-card">
+    <div class="saldo-info">
+      <div class="acc-type">📋 Cuenta de Ahorros</div>
+      <div class="acc-num">****1234</div>
+      <div class="label">Saldo Disponible</div>
+      <div class="amount">$ 5.420.000</div>
+      <div class="date">
+        <span>⏰</span>
+        <span>Actualizado: 21 Mar 2026, 9:00 AM</span>
+      </div>
+    </div>
+    <div class="eye">👁</div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info">
+      <div class="info-title">
+        <div class="icon">📄</div>
+        Información de la Cuenta
+      </div>
+      <div class="row">
+        <span class="key">Tipo de cuenta:</span>
+        <span class="val">Cuenta de Ahorros</span>
+      </div>
+      <div class="row">
+        <span class="key">Número:</span>
+        <span class="val">****1234</span>
+      </div>
+      <div class="row">
+        <span class="key">Tasa de interés:</span>
+        <span class="val green">1.5% mensual</span>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-title">
+        <div class="icon green">📈</div>
+        Proyección de Intereses
+      </div>
+      <div class="row">
+        <span class="key">Interés este mes:</span>
+        <span class="val green">+$ 81.300</span>
+      </div>
+      <div class="row">
+        <span class="key">Saldo proyectado:</span>
+        <span class="val">$ 5.501.300</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

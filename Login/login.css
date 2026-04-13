@@ -180,4 +180,10 @@ body {
 .icono-miplata{
   height: auto;
   width: 100%;
+  border: solid 2px #fff;
+  border-radius: 50%;
+}
+.logo-icon {
+
+     border-radius: 50%;
 }

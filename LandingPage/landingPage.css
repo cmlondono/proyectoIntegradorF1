@@ -400,11 +400,13 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
+ 
 }
 
 .footerMarca img {
   width: 2.8rem;
   height: auto;
+   border-radius: 50%;
 }
 
 .tituloFooter {

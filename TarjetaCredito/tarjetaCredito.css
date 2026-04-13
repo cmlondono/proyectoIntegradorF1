@@ -43,19 +43,49 @@ body {
 
 .nav {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 24px;
   font-size: 14px;
+}
+
+.Profile {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.Profile::before {
+  content: '👤';
+  font-size: 16px;
+}
+
+.Profile:hover {
+  color: #2f5bea;
 }
 
 .logout {
   color: #e53935;
   text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
   cursor: pointer;
-  transition: color 0.2s;
+}
+
+.logout::before {
+  content: '⤴';
+  font-size: 16px;
 }
 
 .logout:hover {
   color: #c62828;
+  transform: scale(1.05);
 }
 
 .container {

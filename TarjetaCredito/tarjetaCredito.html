@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Plata - Tarjeta de Crédito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tarjetaCredito.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="sub-header">
+        <div class="logo">Mi Plata</div>
+        <div class="nav">
+            <span>Perfil</span>
+            <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+
+    <div class="title">💳 Tarjeta de Crédito</div>
+    <div class="subtitle">Simula tus compras a cuotas</div>
+
+    <div class="card-section">
+        <div class="credit-card">
+            <div class="card-logo">💰</div>
+            <div class="card-chip">🟫</div>
+            <div class="card-number">**** **** **** 9012</div>
+            <div class="card-footer">
+                <div class="card-holder">
+                    <div class="label">Titular</div>
+                    <div class="name">JUAN PEREZ</div>
+                </div>
+                <div class="card-expiry">
+                    <div class="label">Vence</div>
+                    <div class="date">12/28</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="credit-info">
+            <div class="info-title">💳 Información de Crédito</div>
+            
+            <div class="info-item">
+                <div class="item-label">Crédito disponible</div>
+                <div class="item-value available">$ 3.800.000</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 76%;"></div>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="item-label">Límite total</div>
+                <div class="item-value">$ 5.000.000</div>
+            </div>
+
+            <div class="info-item">
+                <div class="item-label">Tasa de interés</div>
+                <div class="item-value">2.50% mensual</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="simulator-section">
+        <div class="simulator-title">💳 Simulador de Compras</div>
+
+        <div class="simulator-form">
+            <div class="form-group">
+                <div class="form-label">Valor de la compra</div>
+                <input type="number" class="form-input" placeholder="0" value="0">
+                <div class="form-hint">Máximo disponible: $ 3.800.000</div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-label">Número de cuotas</div>
+                <div class="quotas-grid">
+                    <button class="quota-btn active">1</button>
+                    <button class="quota-btn">3</button>
+                    <button class="quota-btn">6</button>
+                    <button class="quota-btn">9</button>
+                    <button class="quota-btn">12</button>
+                    <button class="quota-btn">18</button>
+                    <button class="quota-btn">24</button>
+                    <button class="quota-btn">36</button>
+                </div>
+            </div>
+
+            <button class="submit-btn">💳 Calcular Cuotas</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

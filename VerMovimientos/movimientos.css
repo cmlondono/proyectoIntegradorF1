@@ -120,9 +120,13 @@ body {
 }
 
 .title {
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 900;
   margin-bottom: 8px;
+}
+.title img {
+  width: 40px;
+  height: 40px;
 }
 
 .subtitle {
@@ -131,24 +135,36 @@ body {
 }
 
 .export-btn {
-  padding: 10px 20px;
+  border: #e2e4e7 solid 2px;
+  height: 40px;
+  width: 120px;
+  padding: 10px 24px;
   background: #fff;
-  border: 1px solid #e5e7eb;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #111;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  margin-top: 50px;
+}
+
+.export-btn img {
+  width: 20px;
+  height: 20px;
+  
 }
 
 .export-btn:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
+  background: #e2e4e7
 }
 
 /* Filter Section */
 .filter-section {
+  height: 140px;
   background: #fff;
   border-radius: 12px;
   padding: 20px 24px;
@@ -157,15 +173,16 @@ body {
 }
 
 .filter-label {
-  font-size: 13px;
-  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
   color: #111;
   margin-bottom: 16px;
 }
 
 .filter-buttons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 

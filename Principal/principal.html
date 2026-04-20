@@ -2,129 +2,115 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Mi Plata</title>
+<title>Mi Plata - Panel Principal</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../Principal/principal.css">
 </head>
 <body>
 
 <div class="header">
-<div class="sub-header">
-  <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
-  <div class="nav">
-    <a href="../Perfil/perfil.html" class="Profile">Perfil</a>
-    <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
-  </div>
+  <div class="sub-header">
+    <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
+    <div class="nav">
+      <a href="#" class="Profile" id="perfilLink">Perfil</a>
+      <a href="#" class="logout" id="logoutLink">Cerrar Sesión</a>
+    </div>
   </div>
 </div>
 
 <div class="container">
-
-  <div class="title">Hola, Juan Pérez 👋</div>
+  <div class="title">Hola, <span id="nombreUsuario"></span> 👋</div>
   <div class="subtitle">Bienvenido a tu panel de control bancario</div>
 
-  <div class="cards">
-    <div class="card">
-      <div>
-        <small>Cuenta de Ahorros</small>
-        <div class="number">****1234</div>
-      </div>
-      <div>
-        <small>Saldo Disponible</small>
-        <div class="balance">$ 5.420.000</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div>
-        <small>Cuenta Corriente</small>
-        <div class="number">****5678</div>
-      </div>
-      <div>
-        <small>Saldo Disponible</small>
-        <div class="balance">$ 2.100.000</div>
-      </div>
-    </div>
+  <!-- Botón único para crear -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <button id="crearProductoBtn" style="background: #0A2540; color: white; padding: 15px 30px; border: none; border-radius: 10px; cursor: pointer; font-size: 16px;">+ Crear nuevo producto</button>
   </div>
 
+  <div class="section-title">Mis Productos</div>
+  <div class="cards" id="cardsContainer"></div>
+
   <div class="section-title">Acciones Rápidas</div>
-
   <div class="actions">
-
-    <div class="action-card" onclick="window.location.href='../SaldoActual/saldoActual.html'">
+    <div class="action-card" id="btnConsultarSaldo">
       <div class="icon"><img src="../IMAGENES/Billetera.png" alt="Consultar Saldo"></div>
       <div class="action-title">Consultar Saldo</div>
       <div class="action-sub">Ver saldo actual</div>
     </div>
 
-    <div class="action-card" onclick="window.location.href='../ConsignarDinero/consignarDinero.html'">
+    <div class="action-card" id="btnConsignar">
       <div class="icon"><img src="../IMAGENES/Consignar.png" alt="Consignar Dinero"></div>
       <div class="action-title">Consignar Dinero</div>
       <div class="action-sub">Depositar fondos</div>
     </div>
 
-    <div class="action-card" onclick="window.location.href='../RetirarDinero/retirarDinero.html'">
-      <div class="icon"><img src="../IMAGENES/RETIRAR.png" alt=""></div>
+    <div class="action-card" id="btnRetirar">
+      <div class="icon"><img src="../IMAGENES/RETIRAR.png" alt="Retirar Dinero"></div>
       <div class="action-title">Retirar Dinero</div>
       <div class="action-sub">Extraer fondos</div>
     </div>
 
-    <div class="action-card" onclick="window.location.href='../VerMovimientos/movimientos.html'">
-      <div class="icon"><img src="../IMAGENES/MOVIMIENTOS.png" alt=""></div>
+    <div class="action-card" id="btnMovimientos">
+      <div class="icon"><img src="../IMAGENES/MOVIMIENTOS.png" alt="Ver Movimientos"></div>
       <div class="action-title">Ver Movimientos</div>
       <div class="action-sub">Historial completo</div>
     </div>
 
-    <div class="action-card" onclick="window.location.href='../Transferir/transferir.html'">
-      <div class="icon"><img src="../IMAGENES/TRANSFERIR.png" alt=""></div>
+    <div class="action-card" id="btnTransferir">
+      <div class="icon"><img src="../IMAGENES/TRANSFERIR.png" alt="Transferir"></div>
       <div class="action-title">Transferir</div>
       <div class="action-sub">Enviar dinero</div>
     </div>
 
-    <div class="action-card"  onclick="window.location.href='../TarjetaCredito/tarjetaCredito.html'">
-      <div class="icon"><img src="../IMAGENES/T_CREDITO.png" alt=""></div>
+    <div class="action-card" id="btnTarjeta">
+      <div class="icon"><img src="../IMAGENES/T_CREDITO.png" alt="Tarjeta Crédito"></div>
       <div class="action-title">Tarjeta de Crédito</div>
       <div class="action-sub">Simular compras</div>
     </div>
-
   </div>
 
   <div class="recent-activity">
     <div class="activity-title">Actividad Reciente</div>
-    
-    <div class="activity-list">
-      <div class="activity-item">
-        <div class="activity-icon "><img src="../IMAGENES/CONSIGNACION.png" alt=""></div>
-        <div class="activity-details">
-          <div class="activity-name">Consignación</div>
-          <div class="activity-date">19 Mar 2026, 10:30 AM</div>
-        </div>
-        <div class="activity-amount green">+$ 500.000</div>
-      </div>
-
-      <div class="activity-item">
-        <div class="activity-icon"> <img src="../IMAGENES/RETIRO.png" alt=""></div>
-        <div class="activity-details">
-          <div class="activity-name">Retiro</div>
-          <div class="activity-date">18 Mar 2026, 3:45 PM</div>
-        </div>
-        <div class="activity-amount red">-$ 200.000</div>
-      </div>
-
-      <div class="activity-item">
-        <div class="activity-icon "><img src="../IMAGENES/TRANSFERENCIA.png" alt=""></div>
-        <div class="activity-details">
-          <div class="activity-name">Transferencia</div>
-          <div class="activity-date">17 Mar 2026, 11:20 AM</div>
-        </div>
-        <div class="activity-amount red">-$ 150.000</div>
-      </div>
-    </div>
-
+    <div class="activity-list" id="activityList"></div>
     <a href="../VerMovimientos/movimientos.html" class="view-all-link">Ver todos los movimientos →</a>
   </div>
-
 </div>
 
+<!-- Popup para crear producto (oculto inicialmente) -->
+<div id="crearPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 30px; border-radius: 16px; width: 400px; max-width: 90%;">
+    <h3 style="margin-bottom: 20px;">Crear nuevo producto</h3>
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; margin-bottom: 5px;">Tipo de producto:</label>
+      <select id="tipoProducto" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+        <option value="ahorros">Cuenta de Ahorros</option>
+        <option value="corriente">Cuenta Corriente</option>
+        <option value="tarjeta">Tarjeta de Crédito</option>
+      </select>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; margin-bottom: 5px;">Saldo inicial (para cuentas) o cupo (para tarjeta):</label>
+      <input type="number" id="saldoInicial" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;" placeholder="0" value="0">
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button id="confirmarCrear" style="flex: 1; background: #0A2540; color: white; padding: 12px; border: none; border-radius: 8px; cursor: pointer;">Crear</button>
+      <button id="cancelarCrear" style="flex: 1; background: #ccc; color: #333; padding: 12px; border: none; border-radius: 8px; cursor: pointer;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Popup para confirmar eliminación -->
+<div id="eliminarPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 30px; border-radius: 16px; width: 350px; max-width: 90%; text-align: center;">
+    <h3 style="margin-bottom: 20px;">¿Eliminar producto?</h3>
+    <p id="eliminarMensaje" style="margin-bottom: 20px;">¿Estás seguro de eliminar este producto?</p>
+    <div style="display: flex; gap: 10px;">
+      <button id="confirmarEliminar" style="flex: 1; background: #c62828; color: white; padding: 12px; border: none; border-radius: 8px; cursor: pointer;">Eliminar</button>
+      <button id="cancelarEliminar" style="flex: 1; background: #ccc; color: #333; padding: 12px; border: none; border-radius: 8px; cursor: pointer;">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="../Principal/principal.js"></script>
 </body>
 </html>

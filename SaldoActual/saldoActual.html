@@ -11,86 +11,43 @@
 
 <div class="header">
 <div class="sub-header">
-  <div class="logo"><img src="../../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
+  <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
   <div class="nav">
-    <a href="#" class="Profile">Perfil</a>
-    <a href="../../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+    <a href="#" class="Profile" id="perfilLink">Perfil</a>
+    <a href="#" class="logout" id="logoutLink">Cerrar Sesión</a>
   </div>
 </div>
 </div>
 
 <div class="container">
 
-  <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+  <a class="back" href="../Principal/principal.html" id="backLink">← Volver al panel</a>
 
   <div class="title">Consultar Saldo</div>
   <div class="subtitle">Visualiza el saldo de tus cuentas</div>
 
   <div class="selector">
     <span class="selector-label">Selecciona una cuenta</span>
-    <div class="opts">
-      <div class="opt active">
-        <div class="opt-name">Cuenta de Ahorros</div>
-        <div class="opt-num">****1234</div>
-      </div>
-      <div class="opt">
-        <div class="opt-name">Cuenta Corriente</div>
-        <div class="opt-num">****5678</div>
-      </div>
-    </div>
+    <div class="opts" id="optsContainer"></div>
   </div>
 
-  <div class="saldo-card">
+  <div class="saldo-card" id="saldoCard" style="display: none;">
     <div class="saldo-info">
-      <div class="acc-type">📋 Cuenta de Ahorros</div>
-      <div class="acc-num">****1234</div>
+      <div class="acc-type" id="accType"></div>
+      <div class="acc-num" id="accNum"></div>
       <div class="label">Saldo Disponible</div>
-      <div class="amount">$ 5.420.000</div>
-      <div class="date">
-        <span>⏰</span>
-        <span>Actualizado: 21 Mar 2026, 9:00 AM</span>
-      </div>
+      <div class="amount" id="amount"></div>
+      <div class="date" id="date"></div>
     </div>
-    <div class="eye">👁</div>
+    <div class="eye" id="eyeBtn">👁</div>
   </div>
 
-  <div class="info-grid">
-    <div class="info">
-      <div class="info-title">
-        <div class="icon">📄</div>
-        Información de la Cuenta
-      </div>
-      <div class="row">
-        <span class="key">Tipo de cuenta:</span>
-        <span class="val">Cuenta de Ahorros</span>
-      </div>
-      <div class="row">
-        <span class="key">Número:</span>
-        <span class="val">****1234</span>
-      </div>
-      <div class="row">
-        <span class="key">Tasa de interés:</span>
-        <span class="val green">1.5% mensual</span>
-      </div>
-    </div>
-
-    <div class="info">
-      <div class="info-title">
-        <div class="icon green">📈</div>
-        Proyección de Intereses
-      </div>
-      <div class="row">
-        <span class="key">Interés este mes:</span>
-        <span class="val green">+$ 81.300</span>
-      </div>
-      <div class="row">
-        <span class="key">Saldo proyectado:</span>
-        <span class="val">$ 5.501.300</span>
-      </div>
-    </div>
-  </div>
+  <div class="info-grid" id="infoGrid"></div>
+  
+  <div id="mensaje" style="display: none; text-align: center; padding: 40px; background: #f5f5f5; border-radius: 16px; margin-top: 20px;"></div>
 
 </div>
 
+<script type="module" src="saldoActual.js"></script>
 </body>
 </html>

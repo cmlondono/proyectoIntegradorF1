@@ -1,0 +1,23 @@
+// Enumeraciones para el sistema bancario
+
+export const TipoMovimiento = {
+    CONSIGNACION: 'CONSIGNACION',
+    RETIRO: 'RETIRO',
+    TRANSFERENCIA_OUT: 'TRANSFERENCIA_OUT',
+    TRANSFERENCIA_IN: 'TRANSFERENCIA_IN',
+    COMPRA_TC: 'COMPRA_TC',
+    PAGO_TC: 'PAGO_TC'
+};
+
+export const EstadoCuenta = {
+    ACTIVA: 'ACTIVA',
+    INACTIVA: 'INACTIVA',
+    BLOQUEADA: 'BLOQUEADA',
+    CERRADA: 'CERRADA'
+};
+
+export const TipoCuenta = {
+    AHORROS: 'AHORROS',
+    CORRIENTE: 'CORRIENTE',
+    TARJETA_CREDITO: 'TARJETA_CREDITO'
+};

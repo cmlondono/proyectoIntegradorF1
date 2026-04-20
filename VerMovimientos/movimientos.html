@@ -11,10 +11,10 @@
 
 <div class="header">
     <div class="sub-header">
-        <div class="logo"><img src="../../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
+        <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
         <div class="nav">
-            <a href="#" class="Profile">Perfil</a>
-            <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+            <a href="#" class="Profile" id="perfilLink">Perfil</a>
+            <a href="#" class="logout" id="logoutLink">Cerrar Sesión</a>
         </div>
     </div>
 </div>
@@ -22,126 +22,32 @@
 <div class="container">
     <div class="header-section">
         <div>
-            <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+            <a class="back" href="../Principal/principal.html" id="backLink">← Volver al panel</a>
             <div class="title"><img src="../IMAGENES/MOVIMIENTOS.png" alt=""> Historial de Movimientos</div>
             <div class="subtitle">Todas tus transacciones en un solo lugar</div>
         </div>
-        <button class="export-btn"><img src="../IMAGENES/EXPORTAR.png" alt=""> Exportar</button>
+        <button class="export-btn" id="exportBtn"><img src="../IMAGENES/EXPORTAR.png" alt=""> Exportar</button>
     </div>
 
     <div class="filter-section">
-        <div class="filter-label">🔽 Filtrar por tipo</div>
-        <div class="filter-buttons">
-            <button class="filter-btn active">Todas</button>
-            <button class="filter-btn">Consignaciones</button>
-            <button class="filter-btn">Retiros</button>
-            <button class="filter-btn">Transferencias</button>
-            <button class="filter-btn">Tarjeta de Crédito</button>
+        <div class="filter-label">Filtrar por tipo</div>
+        <div class="filter-buttons" id="filterButtons">
+           <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn active" data-filtro="todos">Todas</button>
+                <button class="filter-btn" data-filtro="CONSIGNACION">Consignaciones</button>
+                <button class="filter-btn" data-filtro="RETIRO">Retiros</button>
+                <button class="filter-btn" data-filtro="TRANSFERENCIA">Transferencias</button>
+                <button class="filter-btn" data-filtro="TARJETA">Tarjeta de Crédito</button>
+</div>
         </div>
     </div>
 
     <div class="transactions-section">
-        <div class="transactions-count">8 transacciones encontradas</div>
-
-        <div class="transaction-list">
-            <div class="transaction-item">
-                <div class="transaction-icon green">⬇</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Consignación</div>
-                    <div class="transaction-meta">20 de marzo de 2026 • 14:30 • Ahorros ****1234</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount green">+$ 500.000</div>
-                    <div class="balance">Saldo: $ 5.420.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon orange">⬆</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Retiro en cajero</div>
-                    <div class="transaction-meta">19 de marzo de 2026 • 10:15 • Corriente ****5678</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount red">-$ 200.000</div>
-                    <div class="balance">Saldo: $ 2.100.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon purple">⇄</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Transferencia enviada</div>
-                    <div class="transaction-meta">18 de marzo de 2026 • 16:45 • Ahorros ****1234</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount red">-$ 150.000</div>
-                    <div class="balance">Saldo: $ 4.920.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon green">⬇</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Depósito en efectivo</div>
-                    <div class="transaction-meta">17 de marzo de 2026 • 09:20 • Corriente ****5678</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount green">+$ 300.000</div>
-                    <div class="balance">Saldo: $ 2.300.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon purple">⇄</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Transferencia recibida</div>
-                    <div class="transaction-meta">16 de marzo de 2026 • 11:30 • Ahorros ****1234</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount green">+$ 250.000</div>
-                    <div class="balance">Saldo: $ 5.070.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon pink">💳</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Compra con tarjeta de crédito</div>
-                    <div class="transaction-meta">15 de marzo de 2026 • 15:10 • Tarjeta ****9012</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount red">-$ 120.000</div>
-                    <div class="balance">Saldo: $ 380.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon orange">⬆</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Retiro en cajero</div>
-                    <div class="transaction-meta">14 de marzo de 2026 • 08:45 • Ahorros ****1234</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount red">-$ 100.000</div>
-                    <div class="balance">Saldo: $ 4.820.000</div>
-                </div>
-            </div>
-
-            <div class="transaction-item">
-                <div class="transaction-icon green">⬇</div>
-                <div class="transaction-details">
-                    <div class="transaction-title">Consignación</div>
-                    <div class="transaction-meta">13 de marzo de 2026 • 13:25 • Corriente ****5678</div>
-                </div>
-                <div class="transaction-amount">
-                    <div class="amount green">+$ 400.000</div>
-                    <div class="balance">Saldo: $ 2.000.000</div>
-                </div>
-            </div>
-        </div>
+        <div class="transactions-count" id="transactionsCount">0 transacciones encontradas</div>
+        <div class="transaction-list" id="transactionList"></div>
     </div>
 </div>
 
+<script type="module" src="movimientos.js"></script>
 </body>
 </html>

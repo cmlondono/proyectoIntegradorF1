@@ -11,62 +11,46 @@
 
 <div class="header">
     <div class="sub-header">
-        <div class="logo"><img src="../../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
+        <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
         <div class="nav">
-            <a href="#" class="Profile">Perfil</a>
-            <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+            <a href="#" class="Profile" id="perfilLink">Perfil</a>
+            <a href="#" class="logout" id="logoutLink">Cerrar Sesión</a>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+    <a class="back" href="../Principal/principal.html" id="backLink">← Volver al panel</a>
 
-    <div class="title">⬇ Consignar Dinero</div>
+    <div class="title">↓ Consignar Dinero</div>
     <div class="subtitle">Deposita fondos en tu cuenta</div>
 
     <div class="form-section">
         <div class="section-title">Cuenta de destino</div>
         
-        <div class="accounts-grid">
-            <div class="account-card active">
-                <div class="account-info">
-                    <div class="account-name">Cuenta de Ahorros</div>
-                    <div class="account-number">****1234</div>
-                    <div class="account-balance">Saldo: $ 5.420.000</div>
-                </div>
-                <div class="account-radio">●</div>
-            </div>
-
-            <div class="account-card">
-                <div class="account-info">
-                    <div class="account-name">Cuenta Corriente</div>
-                    <div class="account-number">****5678</div>
-                    <div class="account-balance">Saldo: $ 2.100.000</div>
-                </div>
-                <div class="account-radio">○</div>
-            </div>
-        </div>
+        <div class="accounts-grid" id="accountsGrid"></div>
 
         <div class="input-section">
             <div class="section-title">Monto a consignar</div>
-            <input type="number" class="amount-input" placeholder="0" value="0">
-            <div class="input-hint">Ingresa el monto que deseas depositar en tu cuenta</div>
+            <input type="number" class="amount-input" id="montoInput" placeholder="0" value="0">
+            <div class="input-hint" id="inputHint">Ingresa el monto que deseas depositar</div>
         </div>
 
         <div class="quick-amounts">
             <div class="section-title">Montos rápidos</div>
             <div class="amounts-grid">
-                <button class="quick-btn">$ 50.000</button>
-                <button class="quick-btn">$ 100.000</button>
-                <button class="quick-btn">$ 200.000</button>
-                <button class="quick-btn">$ 500.000</button>
+                <button class="quick-btn" data-monto="50000">$ 50.000</button>
+                <button class="quick-btn" data-monto="100000">$ 100.000</button>
+                <button class="quick-btn" data-monto="200000">$ 200.000</button>
+                <button class="quick-btn" data-monto="500000">$ 500.000</button>
             </div>
         </div>
 
-        <button class="submit-btn">⬇ Realizar Consignación</button>
+        <button class="submit-btn" id="consignarBtn">↓ Realizar Consignación</button>
+        <div id="mensaje" class="mensaje" style="display:none;"></div>
     </div>
 </div>
 
+<script type="module" src="consignarDinero.js"></script>
 </body>
 </html>

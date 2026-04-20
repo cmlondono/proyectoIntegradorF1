@@ -11,89 +11,57 @@
 
 <div class="header">
     <div class="sub-header">
-        <div class="logo"><img src="../../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
+        <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
         <div class="nav">
-            <a href="#" class="Profile">Perfil</a>
-            <a href="../LandingPage/landingPage.html" class="logout">Cerrar Sesión</a>
+            <a href="#" class="Profile" id="perfilLink">Perfil</a>
+            <a href="#" class="logout" id="logoutLink">Cerrar Sesión</a>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <a class="back" href="../Principal/principal.html">← Volver al panel</a>
+    <a class="back" href="../Principal/principal.html" id="backLink">← Volver al panel</a>
 
     <div class="title">⇄ Transferir Dinero</div>
     <div class="subtitle">Envía dinero entre tus cuentas o a otros usuarios</div>
 
     <div class="form-section">
         <div class="section-title">Cuenta de origen</div>
-        
-        <div class="accounts-grid-2">
-            <div class="account-card active">
-                <div class="account-info">
-                    <div class="account-name">Cuenta de Ahorros</div>
-                    <div class="account-number">****1234</div>
-                    <div class="account-balance">Saldo: $ 5.420.000</div>
-                </div>
-            </div>
-
-            <div class="account-card">
-                <div class="account-info">
-                    <div class="account-name">Cuenta Corriente</div>
-                    <div class="account-number">****5678</div>
-                    <div class="account-balance">Saldo: $ 2.100.000</div>
-                </div>
-            </div>
-        </div>
+        <div class="accounts-grid-2" id="origenGrid"></div>
 
         <div class="section-title" style="margin-top: 30px;">Tipo de transferencia</div>
-        
-        <div class="transfer-type-grid">
-            <div class="transfer-option active">
+        <div class="transfer-type-grid" id="tipoTransferenciaGrid">
+            <div class="transfer-option active" data-tipo="mismas">
                 <div class="option-title">Entre mis cuentas</div>
                 <div class="option-subtitle">Transferir a otra cuenta propia</div>
             </div>
-
-            <div class="transfer-option">
+            <div class="transfer-option" data-tipo="otros">
                 <div class="option-title">A otros usuarios</div>
                 <div class="option-subtitle">Transferir a terceros</div>
             </div>
         </div>
 
-        <div class="section-title" style="margin-top: 30px;">Cuenta de destino</div>
-        
-        <div class="accounts-grid-2">
-           <!--  <div class="account-card disabled">
-                <div class="account-info">
-                    <div class="account-name">Cuenta de Ahorros</div>
-                    <div class="account-number">****1234</div>
-                </div>
-            </div> -->
+        <div class="section-title" style="margin-top: 30px;" id="destinoTitle">Cuenta de destino</div>
+        <div id="destinoContainer"></div>
 
-            <div class="account-card">
-                <div class="account-info">
-                    <div class="account-name">Cuenta Corriente</div>
-                    <div class="account-number">****5678</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <div class="info-icon">ℹ</div>
-            <div class="info-text">
-                No puedes transferir entre cuentas del mismo tipo (Ahorros a Ahorros o Corriente a Corriente).
+        <div class="info-box" id="infoBox">
+            <div class="info-icon">i</div>
+            <div class="info-text" id="infoText">
+                Seleccione una cuenta de origen y destino
             </div>
         </div>
 
         <div class="input-section">
             <div class="section-title">Monto a transferir</div>
-            <input type="number" class="amount-input" placeholder="0" value="0">
-            <div class="input-hint">Máximo disponible: $ 5.420.000</div>
+            <input type="number" class="amount-input" id="montoInput" placeholder="0" value="0">
+            <div class="input-hint" id="inputHint">Máximo disponible: $0</div>
         </div>
 
-        <button class="submit-btn">⇄ Realizar Transferencia</button>
+        <button class="submit-btn" id="transferirBtn">⇄ Realizar Transferencia</button>
+        <div id="mensaje" class="mensaje" style="display:none;"></div>
     </div>
 </div>
 
+<script type="module" src="transferir.js"></script>
 </body>
 </html>

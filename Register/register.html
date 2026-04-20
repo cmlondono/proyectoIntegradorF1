@@ -4,15 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Plata - Registro</title>
-
 <link rel="stylesheet" href="../Register/register.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <div class="container">
-
     <!-- IZQUIERDA -->
     <div class="left-card">
         <div class="logo">
@@ -21,21 +18,17 @@
             </div>
             <span>Mi Plata</span>
         </div>
-
         <h2>Únete a nuestra familia bancaria</h2>
         <p>Crea tu cuenta en minutos y comienza a disfrutar de todos nuestros beneficios.</p>
-
         <div class="benefits">
             <div class="benefit">
                 <div class="check">✓</div>
                 <span>Sin costos de apertura</span>
             </div>
-
             <div class="benefit">
                 <div class="check">✓</div>
                 <span>Proceso 100% en línea</span>
             </div>
-
             <div class="benefit">
                 <div class="check">✓</div>
                 <span>Activación inmediata</span>
@@ -45,51 +38,51 @@
 
     <!-- DERECHA -->
     <div class="right-card">
-
         <a href="../LandingPage/landingPage.html" class="back">← Volver al inicio</a>
-
         <h2>Crear Cuenta</h2>
         <div class="subtitle">Completa tus datos para registrarte</div>
 
-        <div class="input-group">
-            <label>Número de Identificación</label>
-            <input type="text" placeholder="Ej: 1234567890">
-        </div>
+        <!-- IMPORTANTE: AÑADIR EL FORM AQUÍ -->
+        <form id="registerForm">
+            <div class="input-group">
+                <label>Número de Identificación</label>
+                <input type="text" id="identificacion" placeholder="Ej: 1234567890" required>
+            </div>
 
-        <div class="input-group">
-            <label>Nombre Completo</label>
-            <input type="text" placeholder="Ej: Juan Pérez García">
-        </div>
+            <div class="input-group">
+                <label>Nombre Completo</label>
+                <input type="text" id="nombreCompleto" placeholder="Ej: Juan Pérez García" required>
+            </div>
 
-        <div class="input-group">
-            <label>Número de Celular</label>
-            <input type="text" placeholder="Ej: 3001234567">
-        </div>
+            <div class="input-group">
+                <label>Número de Celular</label>
+                <input type="tel" id="celular" placeholder="Ej: 3001234567" required>
+            </div>
 
-        <div class="input-group">
-            <label>Nombre de Usuario</label>
-            <input type="text" placeholder="Ej: juanperez">
-        </div>
+            <div class="input-group">
+                <label>Nombre de Usuario</label>
+                <input type="text" id="usuario" placeholder="Ej: juanperez" required>
+            </div>
 
-        <div class="input-group">
-            <label>Contraseña</label>
-            <input type="password" placeholder="********">
-        </div>
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" id="contrasena" placeholder="********" required autocomplete="new-password">
+            </div>
 
-        <div class="input-group">
-            <label>Confirmar Contraseña</label>
-            <input type="password" placeholder="********">
-        </div>
+            <div class="input-group">
+                <label>Confirmar Contraseña</label>
+                <input type="password" id="confirmarContrasena" placeholder="********" required autocomplete="new-password">
+            </div>
 
-        <button class="btn">Crear Cuenta</button>
+            <button type="submit" class="btn">Crear Cuenta</button>
+        </form>
 
         <div class="links">
             ¿Ya tienes cuenta? <a href="../Login/login.html">Inicia sesión</a>
         </div>
-
     </div>
-
 </div>
 
+<script type="module" src="register.js"></script>
 </body>
 </html>

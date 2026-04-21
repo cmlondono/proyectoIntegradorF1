@@ -316,18 +316,35 @@ body {
   box-shadow: 0 4px 12px rgba(47, 91, 234, 0.3);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .accounts-grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .transfer-type-grid {
-    grid-template-columns: 1fr;
-  }
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header { width: 50%; }
+  .container { max-width: 1100px; }
+  .title { font-size: 34px; }
+  .form-section { padding: 40px; }
+  .amount-input { padding: 18px; font-size: 18px; }
+  .submit-btn { padding: 18px; font-size: 16px; }
 }
 
-@media (max-width: 640px) {
+/* ===== LAPTOP (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .sub-header { width: 85%; }
+  .accounts-grid-2 { grid-template-columns: 1fr; }
+  .transfer-type-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header { width: 92%; }
+  .container { margin: 28px auto; }
+  .title { font-size: 24px; }
+  .form-section { padding: 24px; }
+}
+
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header { width: 96%; }
+
   .header {
     padding: 0 16px;
   }
@@ -368,4 +385,24 @@ body {
     padding: 14px;
     font-size: 14px;
   }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo { font-size: 16px; }
+  .logo img { height: 24px; }
+  .nav { gap: 14px; font-size: 12px; }
+  .title { font-size: 19px; }
+  .subtitle { font-size: 12px; }
+  .form-section { padding: 16px; border-radius: 12px; }
+  .section-title { font-size: 12px; }
+  .account-card { padding: 14px; }
+  .account-name { font-size: 13px; }
+  .transfer-option { padding: 16px; }
+  .option-title { font-size: 13px; }
+  .option-subtitle { font-size: 11px; }
+  .info-box { padding: 12px; }
+  .info-text { font-size: 12px; }
+  .amount-input { padding: 12px; font-size: 14px; }
+  .submit-btn { padding: 12px; font-size: 13px; border-radius: 10px; }
 }

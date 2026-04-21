@@ -373,21 +373,78 @@ body {
   color: #1e40af;
 }
 
-/* TABLET */
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header {
+    width: 55%;
+  }
+
+  .container {
+    max-width: 1500px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 22px;
+  }
+
+  .actions {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .action-card {
+    padding: 36px 28px;
+  }
+
+  .icon img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .action-title {
+    font-size: 18px;
+  }
+
+  .recent-activity {
+    padding: 36px;
+  }
+
+  .activity-title {
+    font-size: 28px;
+  }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
 @media (max-width: 1024px) {
+  .sub-header {
+    width: 85%;
+  }
+
   .actions {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* MOBILE */
-@media (max-width: 640px) {
-  .header {
-    padding: 0 20px;
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header {
+    width: 92%;
+  }
+
+  .container {
+    margin: 28px auto;
   }
 
   .title {
-    font-size: 22px;
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
   }
 
   .cards {
@@ -399,6 +456,48 @@ body {
   }
 
   .actions {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .action-card {
+    padding: 24px 20px;
+  }
+
+  .recent-activity {
+    padding: 22px;
+    margin-top: 28px;
+  }
+
+  .activity-title {
+    font-size: 20px;
+  }
+}
+
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header {
+    width: 96%;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .actions {
     grid-template-columns: 1fr;
   }
 
@@ -406,10 +505,9 @@ body {
     padding: 24px 20px;
   }
 
-  .icon {
+  .icon img {
     width: 48px;
     height: 48px;
-    font-size: 24px;
   }
 
   .action-title {
@@ -431,14 +529,9 @@ body {
     gap: 12px;
   }
 
-  .activity-item:hover {
-    padding: 12px;
-  }
-
-  .activity-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
+  .activity-icon img {
+    width: 40px;
+    height: 40px;
   }
 
   .activity-name {
@@ -458,5 +551,62 @@ body {
   .view-all-link {
     font-size: 13px;
     margin-top: 12px;
+  }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .nav {
+    gap: 14px;
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 19px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 20px;
+    min-height: 160px;
+  }
+
+  .balance {
+    font-size: 22px;
+  }
+
+  .action-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .activity-item {
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .activity-icon img {
+    width: 36px;
+    height: 36px;
   }
 }

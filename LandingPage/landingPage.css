@@ -424,16 +424,73 @@ a {
   color: var(--blanco);
 }
 
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header {
+    width: 55%;
+  }
+
+  .contenedorHero,
+  .contenedorBeneficios,
+  .contenedorServicios,
+  .contenedorFooter {
+    width: min(1400px, calc(100% - 4rem));
+  }
+
+  .tituloPrincipal {
+    font-size: 4.2rem;
+  }
+
+  .subtituloHero {
+    font-size: 1.2rem;
+  }
+
+  .tarjetaBeneficio {
+    padding: 2.5rem;
+    min-height: 260px;
+  }
+
+  .tarjetaServicio {
+    padding: 2.5rem;
+  }
+
+  .imagenHeroElemento {
+    max-width: 800px;
+  }
+
+  .footerPrincipal {
+    padding: 4rem 0;
+  }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
 @media (max-width: 1024px) {
+  .sub-header {
+    width: 85%;
+  }
+
   .contenedorHero,
   .contenedorBeneficios,
   .contenedorServicios,
   .contenedorFooter {
     width: min(960px, calc(100% - 2rem));
   }
+
+  .contenedorBeneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contenedorServicios {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 900px) {
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header {
+    width: 92%;
+  }
+
   .contenedorHeader {
     flex-direction: column;
     gap: 1rem;
@@ -453,26 +510,47 @@ a {
     justify-content: center;
   }
 
-  .contenedorBeneficios,
+  .contenedorBeneficios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .contenedorServicios,
   .contenedorFooter {
     grid-template-columns: 1fr;
   }
+
+  .seccionHero {
+    padding: 3rem 0 2rem;
+  }
+
+  .seccionBeneficios,
+  .seccionServicios {
+    padding: 3rem 0;
+  }
 }
 
-@media (max-width: 640px) {
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header {
+    width: 96%;
+  }
+
   .seccionHero {
-    padding-top: 3rem;
+    padding-top: 2.5rem;
   }
 
   .tituloPrincipal {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
 
   .subtituloHero,
   .subtituloBeneficios,
   .subtituloServicios {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+  }
+
+  .contenedorBeneficios {
+    grid-template-columns: 1fr;
   }
 
   .botonInicio,
@@ -484,5 +562,77 @@ a {
 
   .contenedorBotonesHero {
     flex-direction: column;
+  }
+
+  .tarjetaBeneficio {
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+
+  .tarjetaServicio {
+    padding: 1.5rem;
+  }
+
+  .footerPrincipal {
+    padding: 2rem 0;
+  }
+
+  .menuNavegacion {
+    gap: 0.5rem;
+  }
+
+  .botonInicio,
+  .botonRegistro {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logoMarca {
+    font-size: 1.1rem;
+  }
+
+  .logoTexto img {
+    width: 2.4rem;
+  }
+
+  .tituloPrincipal {
+    font-size: 1.8rem;
+  }
+
+  .subtituloHero {
+    font-size: 0.88rem;
+  }
+
+  .botonPrimario,
+  .botonSecundario {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .tituloBeneficios,
+  .tituloServicios {
+    font-size: 1.6rem;
+  }
+
+  .tarjetaBeneficio {
+    padding: 1.2rem;
+    min-height: 160px;
+  }
+
+  .iconoBeneficio {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .iconoBeneficio img {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .contenedorFooter {
+    gap: 1rem;
   }
 }

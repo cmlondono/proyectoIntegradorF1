@@ -320,8 +320,20 @@ body {
   color: #6b7280;
 }
 
-/* Responsive */
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header { width: 50%; }
+  .container { max-width: 1400px; }
+  .title { font-size: 38px; }
+  .filter-section { padding: 24px 30px; }
+  .transactions-section { padding: 30px; }
+  .transaction-icon { width: 52px; height: 52px; font-size: 24px; }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
 @media (max-width: 1024px) {
+  .sub-header { width: 85%; }
+
   .header-section {
     flex-direction: column;
     margin-bottom: 24px;
@@ -341,7 +353,30 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header { width: 92%; }
+  .container { margin: 28px auto; }
+  .title { font-size: 26px; }
+
+  .filter-section {
+    height: auto;
+    padding: 18px;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .transactions-section {
+    padding: 20px;
+  }
+}
+
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header { width: 96%; }
+
   .header {
     padding: 0 16px;
   }
@@ -357,6 +392,7 @@ body {
 
   .filter-section {
     padding: 16px;
+    height: auto;
   }
 
   .filter-buttons {
@@ -389,4 +425,31 @@ body {
     width: 100%;
     text-align: left;
   }
+
+  .export-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+  }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo { font-size: 16px; }
+  .logo img { height: 24px; }
+  .nav { gap: 14px; font-size: 12px; }
+  .title { font-size: 19px; }
+  .title img { width: 30px; height: 30px; }
+  .subtitle { font-size: 12px; }
+  .filter-section { padding: 14px; border-radius: 10px; }
+  .filter-label { font-size: 14px; }
+  .filter-btn { padding: 8px 14px; font-size: 12px; }
+  .transactions-section { padding: 14px; border-radius: 10px; }
+  .transactions-count { font-size: 12px; }
+  .transaction-title { font-size: 12px; }
+  .transaction-meta { font-size: 11px; }
+  .amount { font-size: 12px; }
+  .balance { font-size: 11px; }
+  .transaction-icon { width: 36px; height: 36px; font-size: 16px; }
+  .export-btn { font-size: 12px; height: 36px; padding: 8px 16px; }
 }

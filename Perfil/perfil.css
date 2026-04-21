@@ -447,10 +447,80 @@ body {
 
 /* ===== RESPONSIVE ===== */
 
-/* Tablet */
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header {
+    width: 55%;
+  }
+
+  .perfil-container {
+    max-width: 1200px;
+  }
+
+  .perfil-sidebar {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  .avatar-icon {
+    font-size: 50px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+
+  .page-title {
+    font-size: 34px;
+  }
+
+  .info-section {
+    padding: 40px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+  }
+
+  .form-input {
+    font-size: 15px;
+  }
+
+  .input-wrapper {
+    height: 52px;
+  }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .sub-header {
+    width: 85%;
+  }
+
+  .perfil-container {
+    max-width: 850px;
+  }
+
+  .perfil-sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+
+  .sidebar-link {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
+/* ===== TABLET (≤768px) ===== */
 @media (max-width: 768px) {
   .sub-header {
-    width: 90%;
+    width: 92%;
   }
 
   .perfil-content {
@@ -496,10 +566,14 @@ body {
   }
 }
 
-/* Mobile */
+/* ===== CELULAR (≤480px) ===== */
 @media (max-width: 480px) {
   .sub-header {
-    width: 95%;
+    width: 96%;
+  }
+
+  .header {
+    padding: 0 16px;
   }
 
   .perfil-container {
@@ -533,6 +607,160 @@ body {
 
   .sidebar-link {
     justify-content: flex-start;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+
+  .input-wrapper {
+    height: 42px;
+    padding: 0 12px;
+  }
+
+  .form-input {
+    font-size: 13px;
+  }
+
+  .btn-guardar {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .producto-item {
+    padding: 14px 16px;
+  }
+
+  .producto-nombre {
+    font-size: 13px;
+  }
+
+  .producto-icon-badge {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .nav {
+    gap: 14px;
+    font-size: 12px;
+  }
+
+  .perfil-container {
+    padding: 16px 12px 32px;
+  }
+
+  .page-header {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .page-header-icon {
+    font-size: 24px;
+    padding: 5px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .page-subtitle {
+    font-size: 11px;
+  }
+
+  .back-link {
+    font-size: 12px;
+  }
+
+  .info-section {
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  .section-heading {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    font-size: 11px;
+  }
+
+  .input-wrapper {
+    height: 40px;
+    gap: 8px;
+  }
+
+  .input-icon {
+    font-size: 18px;
+  }
+
+  .form-input {
+    font-size: 12px;
+  }
+
+  .form-hint {
+    font-size: 11px;
+  }
+
+  .btn-guardar {
+    padding: 11px;
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .avatar-icon {
+    font-size: 28px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+
+  .user-handle {
+    font-size: 11px;
+  }
+
+  .sidebar-link {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .producto-item {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .producto-nombre {
+    font-size: 12px;
+  }
+
+  .producto-numero {
+    font-size: 11px;
+  }
+
+  .producto-icon-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .producto-icon-badge .material-icons-outlined {
+    font-size: 18px;
   }
 }
 

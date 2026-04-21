@@ -353,8 +353,22 @@ body {
   transform: translateY(-2px);
 }
 
-/* Responsive */
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header { width: 50%; }
+  .container { max-width: 1200px; }
+  .title { font-size: 34px; }
+  .credit-card { padding: 36px; min-height: 240px; }
+  .card-number { font-size: 22px; }
+  .simulator-section { padding: 40px; }
+  .form-input { padding: 16px; font-size: 18px; }
+  .submit-btn { padding: 18px; font-size: 16px; }
+}
+
+/* ===== LAPTOP (≤1024px) ===== */
 @media (max-width: 1024px) {
+  .sub-header { width: 85%; }
+
   .card-section {
     grid-template-columns: 1fr;
   }
@@ -364,7 +378,30 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header { width: 92%; }
+  .container { margin: 28px auto; }
+  .title { font-size: 24px; }
+
+  .card-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .simulator-section {
+    padding: 24px;
+  }
+
+  .quotas-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header { width: 96%; }
+
   .header {
     padding: 0 16px;
   }
@@ -394,7 +431,7 @@ body {
     margin: 30px 0 16px;
   }
 
-  .cards-logo {
+  .card-logo {
     font-size: 24px;
   }
 
@@ -429,4 +466,29 @@ body {
     padding: 14px;
     font-size: 14px;
   }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo { font-size: 16px; }
+  .logo img { height: 24px; }
+  .nav { gap: 14px; font-size: 12px; }
+  .title { font-size: 19px; }
+  .subtitle { font-size: 12px; }
+  .credit-card { padding: 20px; min-height: 160px; }
+  .card-number { font-size: 14px; letter-spacing: 2px; }
+  .card-logo { font-size: 20px; }
+  .card-chip { font-size: 20px; }
+  .name { font-size: 13px; }
+  .credit-info { padding: 18px; }
+  .info-title { font-size: 13px; }
+  .item-label { font-size: 12px; }
+  .item-value { font-size: 14px; }
+  .simulator-section { padding: 16px; border-radius: 12px; }
+  .simulator-title { font-size: 14px; }
+  .form-label { font-size: 12px; }
+  .form-input { padding: 10px; font-size: 13px; }
+  .quotas-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .quota-btn { padding: 8px; font-size: 11px; }
+  .submit-btn { padding: 12px; font-size: 13px; border-radius: 10px; }
 }

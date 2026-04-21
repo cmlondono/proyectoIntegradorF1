@@ -322,15 +322,37 @@ body {
   color: #16a34a;
 }
 
-/* TABLET */
-@media (max-width: 1024px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
+/* ===== TV / MONITOR GRANDE (1920px+) ===== */
+@media (min-width: 1920px) {
+  .sub-header { width: 50%; }
+  .container { max-width: 1100px; }
+  .title { font-size: 34px; }
+  .saldo-card { padding: 40px; height: 340px; }
+  .amount { font-size: 50px; }
+  .info { padding: 26px; }
 }
 
-/* MOBILE */
-@media (max-width: 640px) {
+/* ===== LAPTOP (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .sub-header { width: 85%; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== TABLET (≤768px) ===== */
+@media (max-width: 768px) {
+  .sub-header { width: 92%; }
+  .container { margin: 28px auto; }
+  .title { font-size: 24px; }
+  .saldo-card { height: auto; min-height: 240px; }
+  .amount { font-size: 36px; }
+  .opts { flex-direction: column; }
+  .opt { min-width: 100%; }
+}
+
+/* ===== CELULAR (≤480px) ===== */
+@media (max-width: 480px) {
+  .sub-header { width: 96%; }
+
   .header {
     padding: 0 16px;
   }
@@ -360,6 +382,7 @@ body {
     padding: 20px;
     flex-direction: column;
     gap: 14px;
+    height: auto;
   }
 
   .amount {
@@ -374,4 +397,25 @@ body {
   .info {
     padding: 16px;
   }
+}
+
+/* ===== CELULAR PEQUEÑO (≤320px) ===== */
+@media (max-width: 320px) {
+  .logo { font-size: 16px; }
+  .logo img { height: 24px; }
+  .nav { gap: 14px; font-size: 12px; }
+  .title { font-size: 19px; }
+  .subtitle { font-size: 12px; }
+  .selector { padding: 16px; border-radius: 10px; }
+  .selector-label { font-size: 11px; }
+  .opt { padding: 12px 14px; font-size: 12px; }
+  .opt-name { font-size: 11px; }
+  .saldo-card { padding: 16px; border-radius: 12px; }
+  .acc-type { font-size: 11px; }
+  .acc-num { font-size: 12px; }
+  .amount { font-size: 26px; }
+  .date { font-size: 10px; }
+  .info { padding: 14px; border-radius: 10px; }
+  .info-title { font-size: 12px; }
+  .row { font-size: 11px; padding: 8px 0; }
 }

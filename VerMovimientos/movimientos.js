@@ -1,4 +1,4 @@
-import { TipoMovimiento } from '../js/models/enums/Tipos.js';
+import { TipoMovimiento } from '../models/enums/Tipos.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const sesionActual = localStorage.getItem('sesionActual');

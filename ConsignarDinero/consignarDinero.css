@@ -12,33 +12,40 @@ body {
 
 .header {
   height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px;
   background: #fff;
   border-bottom: 1px solid #eee;
+  width: 100%;
 }
 
 .sub-header {
-  width: 60%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 28px;
   color: #2f5bea;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.3s ease;
 }
 
 .logo img {
-  height: 28px;
+  height: 40px;
   width: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.1);
 }
 
 .nav {
@@ -58,9 +65,9 @@ body {
   font-weight: 500;
 }
 
-.Profile::before {
-  content: '👤';
-  font-size: 16px;
+.Profile img {
+  width: 20px;
+  height: 20px;
 }
 
 .Profile:hover {

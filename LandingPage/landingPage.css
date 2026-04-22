@@ -17,7 +17,8 @@
   --sombra-suave: 0 18px 50px rgba(15, 24, 48, 0.08);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: var(--fondo-general);
@@ -48,8 +49,8 @@ a {
   z-index: 10;
 }
 
-.sub-header{
-  width: 65%;
+.sub-header {
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -400,13 +401,13 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
- 
+
 }
 
 .footerMarca img {
   width: 2.8rem;
   height: auto;
-   border-radius: 50%;
+  border-radius: 50%;
 }
 
 .tituloFooter {

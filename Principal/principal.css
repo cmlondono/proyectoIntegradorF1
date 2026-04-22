@@ -13,18 +13,19 @@ body {
 /* HEADER */
 .header {
   height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
   background: #fff;
   border-bottom: 1px solid #eee;
+  width: 100%;
 }
 
 .sub-header {
-  width: 65%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -40,6 +41,11 @@ body {
   height: 40px;
   width: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.1);
 }
 
 .nav {
@@ -59,9 +65,9 @@ body {
   font-weight: 500;
 }
 
-.Profile::before {
-  content: '👤';
-  font-size: 16px;
+.Profile img {
+  width: 20px;
+  height: 20px;
 }
 
 .Profile:hover {
@@ -97,6 +103,41 @@ body {
 }
 
 /* TITULOS */
+.header-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn-crear {
+  display: flex;
+  align-items: center;
+  background: white;
+  color: #0A2540;
+  border: solid 1px #00000025;
+  box-shadow: 0 4px 12px #00000022;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-crear img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  filter: drop-shadow(0 4px 12px #00000022);
+}
+
+.btn-crear:hover {
+  background: #f5f7fb;
+}
+
 .title {
   font-size: 35px;
   font-weight: 700;
@@ -205,6 +246,11 @@ body {
   color: #fff;
   font-size: 28px;
   font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.action-card:hover .icon img {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .logo-icon {
@@ -376,7 +422,7 @@ body {
 /* ===== TV / MONITOR GRANDE (1920px+) ===== */
 @media (min-width: 1920px) {
   .sub-header {
-    width: 55%;
+    max-width: 1500px;
   }
 
   .container {
@@ -420,9 +466,6 @@ body {
 
 /* ===== LAPTOP (≤1024px) ===== */
 @media (max-width: 1024px) {
-  .sub-header {
-    width: 85%;
-  }
 
   .actions {
     grid-template-columns: repeat(2, 1fr);
@@ -431,9 +474,6 @@ body {
 
 /* ===== TABLET (≤768px) ===== */
 @media (max-width: 768px) {
-  .sub-header {
-    width: 92%;
-  }
 
   .container {
     margin: 28px auto;
@@ -476,9 +516,6 @@ body {
 
 /* ===== CELULAR (≤480px) ===== */
 @media (max-width: 480px) {
-  .sub-header {
-    width: 96%;
-  }
 
   .header {
     padding: 0 16px;

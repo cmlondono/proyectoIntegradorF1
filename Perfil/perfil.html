@@ -18,7 +18,7 @@
         <div class="sub-header">
             <div class="logo"><img src="../IMAGENES/LOGO.png" alt="Logo Mi Plata"> Mi Plata</div>
             <div class="nav">
-                <a href="../Principal/principal.html" class="Profile" id="panelLink">Mi Perfil</a>
+                <a href="../Principal/principal.html" class="Profile" id="panelLink"> <img src="../IMAGENES/USER_EDIDT.svg" alt="">Mi Perfil</a>
                 <a href="../LandingPage/landingPage.html" class="logout" id="logoutLink">Cerrar Sesión</a>
             </div>
         </div>
@@ -47,8 +47,12 @@
             <!-- LEFT SIDEBAR -->
             <div class="perfil-sidebar">
                 <div class="avatar-section">
-                    <div class="avatar">
-                        <span class="material-icons-outlined avatar-icon">person_outline</span>
+                    <div class="avatar" id="avatarContainer">
+                        <img id="userAvatar" src="../IMAGENES/USER_EDIDT.svg" alt="Avatar" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        <span class="material-icons-outlined avatar-icon" id="avatarPlaceholder">person_outline</span>
+                        <button class="edit-avatar-btn" id="btnEditAvatar" title="Cambiar imagen">
+                            <span class="material-icons-outlined">camera_alt</span>
+                        </button>
                     </div>
                     <div class="user-name" id="sidebarUserName">Juan Pérez García</div>
                     <div class="user-handle" id="sidebarUserHandle">@juanperez</div>
@@ -207,6 +211,33 @@
 
             </div>
         </div>
+    </div>
+
+    <!-- Modal Selector de Avatar -->
+    <div id="avatarModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Selecciona tu Avatar</h3>
+                <span class="close-modal" id="closeAvatarModal">&times;</span>
+            </div>
+            <div class="avatar-grid">
+                <!-- Avatares predeterminados generados -->
+                <div class="avatar-option" data-avatar="../IMAGENES/avatar1.png"><img src="../IMAGENES/avatar1.png" alt="Avatar 1" style="width: 100%; height: 100%; border-radius: 50%;"></div>
+                <div class="avatar-option" data-avatar="../IMAGENES/avatar2.png"><img src="../IMAGENES/avatar2.png" alt="Avatar 2" style="width: 100%; height: 100%; border-radius: 50%;"></div>
+                <div class="avatar-option" data-avatar="../IMAGENES/avatar3.png"><img src="../IMAGENES/avatar3.png" alt="Avatar 3" style="width: 100%; height: 100%; border-radius: 50%;"></div>
+                <div class="avatar-option" data-avatar="../IMAGENES/avatar4.png"><img src="../IMAGENES/avatar4.png" alt="Avatar 4" style="width: 100%; height: 100%; border-radius: 50%;"></div>
+                <div class="avatar-option" data-avatar="default"><span class="material-icons-outlined">person</span></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancelar" id="btnCancelarAvatar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification (for feedback) -->
+    <div id="toast" class="toast-notification">
+        <span class="material-icons-outlined" id="toastIcon">check_circle</span>
+        <span id="toastMessage">Cambios guardados con éxito</span>
     </div>
 
     <script src="../Perfil/perfil.js"></script>

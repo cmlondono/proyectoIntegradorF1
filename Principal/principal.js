@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 let icono = 'TRANSFERENCIA.png';
                 if (movimiento.tipo === 'CONSIGNACION') icono = 'CONSIGNACION.png';
                 if (movimiento.tipo === 'RETIRO') icono = 'RETIRO.png';
-                if (movimiento.tipo === 'INTERES') icono = 'INTERES.png';
+                if (movimiento.tipo == 'INTERES') icono = 'INTERES.png';
                 
                 const item = document.createElement('div');
                 item.className = 'activity-item';

@@ -6,7 +6,8 @@ export const TipoMovimiento = {
     TRANSFERENCIA_OUT: 'TRANSFERENCIA_OUT',
     TRANSFERENCIA_IN: 'TRANSFERENCIA_IN',
     COMPRA_TC: 'COMPRA_TC',
-    PAGO_TC: 'PAGO_TC'
+    PAGO_TC: 'PAGO_TC',
+    INTERES: 'INTERES'
 };
 
 export const EstadoCuenta = {

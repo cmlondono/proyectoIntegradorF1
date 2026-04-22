@@ -81,6 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (movimiento.tipo === TipoMovimiento.PAGO_TC) {
             return { icono: '💳', clase: 'green' };
         }
+        // Mostrar imagen de interés si el tipo es INTERES
+        if (movimiento.tipo === TipoMovimiento.INTERES) {
+            return { icono: '../IMAGENES/INTERES.png', clase: 'blue', esImagen: true };
+        }
         return { icono: '•', clase: 'gray' };
     }
     
@@ -164,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         transactionList.innerHTML = '';
         
         movimientosFiltrados.forEach(function(movimiento) {
-            const { icono, clase } = getIconoYColor(movimiento);
+            const { icono, clase, esImagen } = getIconoYColor(movimiento);
             const esIngreso = movimiento.tipo === TipoMovimiento.CONSIGNACION || 
                              movimiento.tipo === TipoMovimiento.TRANSFERENCIA_IN ||
                              movimiento.tipo === TipoMovimiento.PAGO_TC;
@@ -184,7 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const item = document.createElement('div');
             item.className = 'transaction-item';
             item.innerHTML = `
-                <div class="transaction-icon ${clase}">${icono}</div>
+                <div class="transaction-icon ${clase}">
+                    ${esImagen ? `<img src="${icono}" alt="Interés" style="width:50px;height:50px;object-fit:contain;">` : icono}
+                </div>
                 <div class="transaction-details">
                     <div class="transaction-title">${getTipoLegible(movimiento.tipo)}</div>
                     <div class="transaction-meta">${fechaFormateada} • ${infoCuenta}</div>

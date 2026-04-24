@@ -1,3 +1,5 @@
+
+import { TipoMovimiento } from '../models/enums/Tipos.js';
 document.addEventListener('DOMContentLoaded', function () {
     const sesionActual = localStorage.getItem('sesionActual');
 

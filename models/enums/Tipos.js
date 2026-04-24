@@ -1,5 +1,4 @@
-// Enumeraciones para el sistema bancario
-
+// Quita window.
 export const TipoMovimiento = {
     CONSIGNACION: 'CONSIGNACION',
     RETIRO: 'RETIRO',

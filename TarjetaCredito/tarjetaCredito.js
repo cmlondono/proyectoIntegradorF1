@@ -1,3 +1,5 @@
+import { TipoMovimiento } from '../models/enums/Tipos.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const sesionActual = localStorage.getItem('sesionActual');
 
@@ -281,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         fechaHora: new Date().toISOString(),
                         descripcion: 'Compra de ' + formatearMoneda(monto) + ' en ' + cuotasSeleccionadas + ' cuotas - Cuota mensual: ' + formatearMoneda(cuotaMensual)
                     };
-
+                    console.log('Movimiento registrado:', movimiento);
                     if (!tarjetaSeleccionada.movimientos) {
                         tarjetaSeleccionada.movimientos = [];
                     }

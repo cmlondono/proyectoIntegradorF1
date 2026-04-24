@@ -34,4 +34,4 @@ window.getCuentaActual = function() {
     return window.sistemaBancario.cuentaActual;
 };
 
-console.log('✅ Sistema Bancario Inicializado');
+console.log('Sistema Bancario Inicializado');

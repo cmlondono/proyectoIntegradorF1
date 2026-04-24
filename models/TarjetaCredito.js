@@ -15,7 +15,7 @@ class TarjetaCredito {
     // Consultar saldo disponible
     consultarSaldoDisponible() {
         if (this.estado !== EstadoCuenta.ACTIVA) {
-            throw new Error('❌ Tarjeta no está activa');
+            throw new Error('Tarjeta no está activa');
         }
         return this.cupo - this.deuda;
     }
@@ -28,16 +28,16 @@ class TarjetaCredito {
     // Realizar compra a cuotas
     comprar(monto, cuotas = 1) {
         if (this.estado !== EstadoCuenta.ACTIVA) {
-            throw new Error('❌ Tarjeta no está activa');
+            throw new Error('Tarjeta no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto de compra debe ser mayor a 0');
+            throw new Error('El monto de compra debe ser mayor a 0');
         }
         if (cuotas < 1) {
-            throw new Error('❌ El número de cuotas debe ser al menos 1');
+            throw new Error('El número de cuotas debe ser al menos 1');
         }
         if (monto > this.consultarSaldoDisponible()) {
-            throw new Error(`❌ Cupo insuficiente. Disponible: ${this.getSaldoDisponibleFormateado()}`);
+            throw new Error(`cupo insuficiente. Disponible: ${this.getSaldoDisponibleFormateado()}`);
         }
 
         // Calcular tasa de interés según número de cuotas
@@ -96,13 +96,13 @@ class TarjetaCredito {
     // Pagar deuda
     pagar(monto) {
         if (this.estado !== EstadoCuenta.ACTIVA) {
-            throw new Error('❌ Tarjeta no está activa');
+            throw new Error('Tarjeta no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto de pago debe ser mayor a 0');
+            throw new Error('El monto de pago debe ser mayor a 0');
         }
         if (monto > this.deuda) {
-            throw new Error(`❌ El pago excede la deuda actual. Deuda: ${this.getDeudaFormateado()}`);
+            throw new Error(`El pago excede la deuda actual. Deuda: ${this.getDeudaFormateado()}`);
         }
 
         this.deuda -= monto;
@@ -115,7 +115,7 @@ class TarjetaCredito {
 
         return {
             exito: true,
-            mensaje: `✅ Pago exitoso. Deuda restante: ${this.getDeudaFormateado()}`,
+            mensaje: `Pago exitoso. Deuda restante: ${this.getDeudaFormateado()}`,
             nuevaDeuda: this.deuda
         };
     }

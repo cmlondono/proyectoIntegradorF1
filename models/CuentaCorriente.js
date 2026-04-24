@@ -12,19 +12,19 @@ class CuentaCorriente extends Cuenta {
         return this.saldo + (this.saldo * this.porcentajeSobregiro);
     }
 
-    // Implementación específica para retirar en cuenta corriente
+    //retirar en cuenta corriente
     retirar(monto) {
         if (this.estado !== 'ACTIVA') {
-            throw new Error('❌ Cuenta no está activa');
+            throw new Error('Cuenta no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto a retirar debe ser mayor a 0');
+            throw new Error('El monto a retirar debe ser mayor a 0');
         }
 
         const limite = this.getLimiteRetiro();
         
         if (monto > limite) {
-            throw new Error(`❌ Límite excedido. Puede retirar hasta: ${this.getLimiteFormateado()}`);
+            throw new Error(`Límite excedido. Puede retirar hasta: ${this.getLimiteFormateado()}`);
         }
 
         const usoSobregiro = monto > this.saldo;
@@ -45,7 +45,7 @@ class CuentaCorriente extends Cuenta {
 
         return {
             exito: true,
-            mensaje: `✅ Retiro exitoso. Nuevo saldo: ${this.getSaldoFormateado()}`,
+            mensaje: `Retiro exitoso. Nuevo saldo: ${this.getSaldoFormateado()}`,
             usoSobregiro: usoSobregiro,
             montoSobregiro: montoSobregiro
         };
@@ -54,19 +54,19 @@ class CuentaCorriente extends Cuenta {
     // Transferir dinero a otra cuenta
     transferir(cuentaDestino, monto) {
         if (this.estado !== 'ACTIVA') {
-            throw new Error('❌ Cuenta origen no está activa');
+            throw new Error('Cuenta origen no está activa');
         }
         if (cuentaDestino.estado !== 'ACTIVA') {
-            throw new Error('❌ Cuenta destino no está activa');
+            throw new Error('Cuenta destino no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto a transferir debe ser mayor a 0');
+            throw new Error('El monto a transferir debe ser mayor a 0');
         }
 
         const limite = this.getLimiteRetiro();
         
         if (monto > limite) {
-            throw new Error(`❌ Saldo insuficiente. Límite disponible: ${this.getLimiteFormateado()}`);
+            throw new Error(`aldo insuficiente. Límite disponible: ${this.getLimiteFormateado()}`);
         }
 
         // Realizar transferencia
@@ -89,7 +89,7 @@ class CuentaCorriente extends Cuenta {
 
         return {
             exito: true,
-            mensaje: `✅ Transferencia exitosa a ${cuentaDestino.numeroCuenta}. Nuevo saldo: ${this.getSaldoFormateado()}`
+            mensaje: `Transferencia exitosa a ${cuentaDestino.numeroCuenta}. Nuevo saldo: ${this.getSaldoFormateado()}`
         };
     }
 

@@ -15,7 +15,7 @@ class Usuario {
     // Autenticar usuario
     autenticar(usuario, contrasena) {
         if (this.bloqueado) {
-            throw new Error('❌ Cuenta bloqueada. Contacte al administrador.');
+            throw new Error(' Cuenta bloqueada. Contacte al administrador.');
         }
         
         if (this.usuario === usuario && this.contrasena === contrasena) {
@@ -43,13 +43,13 @@ class Usuario {
     // Cambiar contraseña
     cambiarContrasena(contrasenaActual, nuevaContrasena, confirmarContrasena) {
         if (this.contrasena !== contrasenaActual) {
-            throw new Error('❌ Contraseña actual incorrecta');
+            throw new Error(' Contraseña actual incorrecta');
         }
         if (nuevaContrasena !== confirmarContrasena) {
-            throw new Error('❌ Las contraseñas nuevas no coinciden');
+            throw new Error('Las contraseñas nuevas no coinciden');
         }
         if (nuevaContrasena.length < 4) {
-            throw new Error('❌ La contraseña debe tener al menos 4 caracteres');
+            throw new Error('La contraseña debe tener al menos 4 caracteres');
         }
         this.contrasena = nuevaContrasena;
         return true;

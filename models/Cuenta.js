@@ -17,7 +17,7 @@ class Cuenta {
     // Consultar saldo
     consultarSaldo() {
         if (this.estado !== EstadoCuenta.ACTIVA) {
-            throw new Error('❌ Cuenta no está activa');
+            throw new Error('La Cuenta no está activa');
         }
         return this.saldo;
     }
@@ -25,10 +25,10 @@ class Cuenta {
     // Consignar dinero
     consignar(monto) {
         if (this.estado !== EstadoCuenta.ACTIVA) {
-            throw new Error('❌ Cuenta no está activa');
+            throw new Error('La Cuenta no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto a consignar debe ser mayor a 0');
+            throw new Error('El monto a consignar debe ser mayor a 0');
         }
         
         this.saldo += monto;
@@ -39,12 +39,12 @@ class Cuenta {
         );
     }
 
-    // Retirar dinero (método abstracto - será implementado por las hijas)
+    // Retirar dinero 
     retirar(monto) {
         throw new Error('Método retirar debe ser implementado por la clase hija');
     }
 
-    // Registrar movimiento (polimorfismo)
+    // Registrar movimiento 
     registrarMovimiento(tipo, valor, descripcion = '') {
         const movimiento = new Movimiento(tipo, valor, this.saldo, descripcion);
         this.movimientos.push(movimiento);

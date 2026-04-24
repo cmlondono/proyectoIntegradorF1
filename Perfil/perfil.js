@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const toastMessage = document.getElementById('toastMessage');
     const toastIcon = document.getElementById('toastIcon');
 
-    // --- ESTADO INICIAL / CARGA DE DATOS ---
+    //ESTADO INICIAL 
     let currentUser = JSON.parse(localStorage.getItem('usuarioLogueado')) || {
         nombre: "Juan Pérez García",
         usuario: "juanperez",
         identificacion: "1234567890",
         celular: "3001234567",
         correo: "juan.perez@email.com",
-        avatar: null // null significa que usa el icono por defecto
+        avatar: null //icn por defecto
     };
 
     const cargarDatos = () => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- NAVEGACIÓN ENTRE SECCIONES ---
+    //NAVEGACIÓN ENTRE SECCIONES
     const mostrarSeccion = (seccion) => {
         if (seccion === 'datos') {
             seccionDatos.classList.remove('hidden');
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarSeccion('password');
     });
 
-    // --- GESTIÓN DEL AVATAR ---
+    //GESTIÓN DEL AVATAR
     btnEditAvatar.addEventListener('click', () => {
         avatarModal.classList.add('active');
     });
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- FORMULARIOS ---
+    // FORMULARIOS 
     formPerfil.addEventListener('submit', (e) => {
         e.preventDefault();
         
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formPassword.reset();
     });
 
-    // --- UTILIDADES ---
+    // UTILIDADES 
     const guardarEnStorage = () => {
         localStorage.setItem('usuarioLogueado', JSON.stringify(currentUser));
     };
@@ -176,6 +176,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     };
 
-    // Inicializar
     cargarDatos();
 });

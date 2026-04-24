@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener sesión actual
     const sesionActual = localStorage.getItem('sesionActual');
 
     if (!sesionActual) {
@@ -291,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Para transferencias entre cuentas propias, verificar que no sean del mismo tipo
+        //transferencias entre cuentas propias, verificar que no sean del mismo tipo
         if (tipoTransferencia === 'mismas' && cuentaOrigen.tipo === cuentaDestino.tipo) {
             mostrarMensaje('No se puede transferir entre cuentas del mismo tipo (Ahorros a Ahorros o Corriente a Corriente)', true);
             return;

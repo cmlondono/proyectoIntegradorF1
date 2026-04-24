@@ -22,7 +22,7 @@ class Movimiento {
         });
     }
 
-    // Método para obtener tipo legible
+    // Método para obtener tipo 
     getTipoLegible() {
         const tipos = {
             [TipoMovimiento.CONSIGNACION]: 'Consignación',

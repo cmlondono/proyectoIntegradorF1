@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Crear usuario SIN cuentas
+        // Crear usuario sin cuentas
         const nuevoUsuario = {
             id: Date.now(),
             identificacion: identificacion,

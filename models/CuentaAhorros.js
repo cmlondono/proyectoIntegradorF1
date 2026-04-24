@@ -7,13 +7,13 @@ class CuentaAhorros extends Cuenta {
         this.tasaInteresMensual = 0.015; // 1.5% mensual
     }
 
-    // Implementación específica para retirar en cuenta de ahorros
+    // retirar en cuenta de ahorros
     retirar(monto) {
         if (this.estado !== 'ACTIVA') {
-            throw new Error('❌ Cuenta no está activa');
+            throw new Error('Cuenta no está activa');
         }
         if (monto <= 0) {
-            throw new Error('❌ El monto a retirar debe ser mayor a 0');
+            throw new Error('El monto a retirar debe ser mayor a 0');
         }
 
         // Aplicar interés antes del retiro
@@ -29,7 +29,7 @@ class CuentaAhorros extends Cuenta {
 
         // Validar saldo suficiente después del interés
         if (monto > this.saldo) {
-            throw new Error(`❌ Saldo insuficiente. Saldo actual: ${this.getSaldoFormateado()}`);
+            throw new Error(`Saldo insuficiente. Saldo actual: ${this.getSaldoFormateado()}`);
         }
 
         // Realizar retiro
@@ -42,7 +42,7 @@ class CuentaAhorros extends Cuenta {
 
         return {
             exito: true,
-            mensaje: `✅ Retiro exitoso. Nuevo saldo: ${this.getSaldoFormateado()}`,
+            mensaje: `Retiro exitoso. Nuevo saldo: ${this.getSaldoFormateado()}`,
             interesAplicado: interes
         };
     }

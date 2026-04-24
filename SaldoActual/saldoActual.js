@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         optsContainer.innerHTML = '';
         
-        // Mostrar solo cuentas bancarias (no tarjetas)
+        // Mostrar solo cuentas de banco sin las tarjetas
         const cuentasBancarias = usuario.cuentas;
         
         if (cuentasBancarias.length === 0) {

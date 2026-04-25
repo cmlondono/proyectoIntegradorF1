@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             amount.textContent = formatearMoneda(cuentaSeleccionada.saldo);
         }
         
-        date.innerHTML = '<span>⏰</span><span>Actualizado: ' + getFechaActual() + '</span>';
+       
         saldoCard.style.display = 'block';
         
         // Actualizar info grid

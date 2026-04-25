@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- ELEMENTOS DEL DOM ---
     const linkDatos = document.getElementById('linkDatos');
     const linkPassword = document.getElementById('linkPassword');
     const seccionDatos = document.getElementById('seccionDatos');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarUserName = document.getElementById('sidebarUserName');
     const sidebarUserHandle = document.getElementById('sidebarUserHandle');
     
-    // Elementos del Avatar
     const btnEditAvatar = document.getElementById('btnEditAvatar');
     const avatarModal = document.getElementById('avatarModal');
     const closeAvatarModal = document.getElementById('closeAvatarModal');
@@ -20,34 +18,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const userAvatarImg = document.getElementById('userAvatar');
     const avatarPlaceholder = document.getElementById('avatarPlaceholder');
     
-    // Toast
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toastMessage');
     const toastIcon = document.getElementById('toastIcon');
 
-    //ESTADO INICIAL 
-    let currentUser = JSON.parse(localStorage.getItem('usuarioLogueado')) || {
-        nombre: "Juan Pérez García",
-        usuario: "juanperez",
-        identificacion: "1234567890",
-        celular: "3001234567",
-        correo: "juan.perez@email.com",
-        avatar: null //icn por defecto
+    let currentUser = JSON.parse(localStorage.getItem('sesionActual')) || {
+        id: null,
+        identificacion: "",
+        nombreCompleto: "",
+        celular: "",
+        usuario: "",
+        contrasena: "",
+        intentosFallidos: 0,
+        bloqueado: false,
+        avatar: null,
+        cuentas: [],
+        tarjetas: []
     };
 
     const cargarDatos = () => {
-        // Llenar campos del formulario
-        document.getElementById('nombreCompleto').value = currentUser.nombre;
+        document.getElementById('nombreCompleto').value = currentUser.nombreCompleto;
         document.getElementById('numIdentificacion').value = currentUser.identificacion;
         document.getElementById('numCelular').value = currentUser.celular;
-        document.getElementById('correoElectronico').value = currentUser.correo;
         document.getElementById('nombreUsuario').value = currentUser.usuario;
         
-        // Actualizar Sidebar
-        sidebarUserName.textContent = currentUser.nombre;
+        sidebarUserName.textContent = currentUser.nombreCompleto;
         sidebarUserHandle.textContent = `@${currentUser.usuario}`;
         
-        // Actualizar Avatar
         actualizarAvatarUI(currentUser.avatar);
     };
 
@@ -62,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    //NAVEGACIÓN ENTRE SECCIONES
     const mostrarSeccion = (seccion) => {
         if (seccion === 'datos') {
             seccionDatos.classList.remove('hidden');
@@ -87,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarSeccion('password');
     });
 
-    //GESTIÓN DEL AVATAR
     btnEditAvatar.addEventListener('click', () => {
         avatarModal.classList.add('active');
     });
@@ -105,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     avatarOptions.forEach(option => {
         option.addEventListener('click', () => {
-            // Quitamos selección previa
             avatarOptions.forEach(opt => opt.classList.remove('selected'));
             option.classList.add('selected');
             
@@ -124,14 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // FORMULARIOS 
     formPerfil.addEventListener('submit', (e) => {
         e.preventDefault();
         
         currentUser.nombre = document.getElementById('nombreCompleto').value;
         currentUser.celular = document.getElementById('numCelular').value;
         currentUser.correo = document.getElementById('correoElectronico').value;
-        
+        currentUser.contraseña = document.getElementById('passwordActual').value;
         sidebarUserName.textContent = currentUser.nombre;
         
         guardarEnStorage();
@@ -149,25 +142,43 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
+        if (actual !== currentUser.contrasena) {
+            showToast("La contraseña actual es incorrecta", "error", "toast-error");
+            return;
+        }
+        
         if (nueva !== confirmar) {
             showToast("Las contraseñas no coinciden", "error", "toast-error");
             return;
         }
         
-        showToast("Contraseña actualizada correctamente");
+        if (nueva.length < 4) {
+            showToast("La contraseña debe tener al menos 4 caracteres", "error", "toast-error");
+            return;
+        }
+        
+        currentUser.contrasena = nueva;
+        guardarEnStorage();
+        
+        showToast("Contraseña actualizada correctamente", "check_circle");
         formPassword.reset();
     });
 
-    // UTILIDADES 
     const guardarEnStorage = () => {
-        localStorage.setItem('usuarioLogueado', JSON.stringify(currentUser));
+        localStorage.setItem('sesionActual', JSON.stringify(currentUser));
+        
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        const userIndex = usuarios.findIndex(u => u.id === currentUser.id);
+        if (userIndex !== -1) {
+            usuarios[userIndex] = currentUser;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
     };
 
     const showToast = (message, icon = "check_circle", typeClass = "toast-success") => {
         toastMessage.textContent = message;
         toastIcon.textContent = icon;
         
-        // Limpiar clases previas
         toast.className = "toast-notification";
         toast.classList.add(typeClass, "toast-visible");
         

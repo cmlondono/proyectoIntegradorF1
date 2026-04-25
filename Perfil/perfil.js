@@ -31,9 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contrasena: "",
         intentosFallidos: 0,
         bloqueado: false,
-        avatar: null,
-        cuentas: [],
-        tarjetas: []
+        avatar: null
     };
 
     const cargarDatos = () => {

@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cardSection.innerHTML = `
             <div class="credit-card">
-                <div class="card-logo">💰</div>
-                <div class="card-chip">🟫</div>
+                <div class="card-logo"></div>
+                <div class="card-chip"></div>
                 <div class="card-number">${numeroOculto}</div>
                 <div class="card-footer">
                     <div class="card-holder">
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
             <div class="credit-info">
-                <div class="info-title">💳 Información de Crédito</div>
+                <div class="info-title">Información de Crédito</div>
                 <div class="info-item">
                     <div class="item-label">Crédito disponible</div>
                     <div class="item-value available">${formatearMoneda(disponible)}</div>
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
         resultadoSimulacion.style.display = 'block';
         resultadoSimulacion.innerHTML = `
             <div class="simulacion-resultado" style="background: #f5f5f5; padding: 20px; border-radius: 16px;">
-                <div class="resultado-title" style="font-weight: bold; margin-bottom: 15px;">📊 Resumen de la compra</div>
+                <div class="resultado-title" style="font-weight: bold; margin-bottom: 15px;">Resumen de la compra</div>
                 <div class="resultado-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
                         <div style="font-size: 12px; color: #666;">Valor de la compra</div>

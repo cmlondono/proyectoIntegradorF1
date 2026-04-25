@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
        
         saldoCard.style.display = 'block';
-        
-        // Actualizar info grid
+
         if (esAhorros) {
             const interesMensual = cuentaSeleccionada.saldo * 0.015;
             const saldoProyectado = cuentaSeleccionada.saldo + interesMensual;
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             infoGrid.innerHTML = `
                 <div class="info">
                     <div class="info-title">
-                        <div class="icon">📄</div>
+                        <div class="icon"></div>
                         Información de la Cuenta
                     </div>
                     <div class="row">
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="info">
                     <div class="info-title">
-                        <div class="icon green">📈</div>
+                        <div class="icon green"></div>
                         Proyección de Intereses
                     </div>
                     <div class="row">
@@ -96,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             infoGrid.innerHTML = `
                 <div class="info">
                     <div class="info-title">
-                        <div class="icon">📄</div>
+                        <div class="icon"></div>
                         Información de la Cuenta
                     </div>
                     <div class="row">
@@ -114,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="info">
                     <div class="info-title">
-                        <div class="icon green">💳</div>
+                        <div class="icon green"></div>
                         Límite de Retiro
                     </div>
                     <div class="row">

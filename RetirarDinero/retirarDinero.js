@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function getLimiteRetiro(cuenta) {
         if (cuenta.tipo === 'ahorros') {
-            // Para ahorros: el interés se aplica ANTES del retiro
+          
             const interes = cuenta.saldo * 0.015;
             const saldoConInteres = cuenta.saldo + interes;
             return saldoConInteres;
         } else {
-            // Corriente: saldo + 20% sobregiro
+           
             return cuenta.saldo + (cuenta.saldo * 0.2);
         }
     }
@@ -174,14 +174,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let saldoAntesDelRetiro = cuentaSeleccionada.saldo;
         
         if (cuentaSeleccionada.tipo === 'ahorros') {
-            // PASO 1: Calcular interés del 1.5% sobre el saldo actual
+
             interesAplicado = cuentaSeleccionada.saldo * 0.015;
-            
-            // PASO 2: Agregar interés al saldo (el banco te paga)
+
             nuevoSaldo = cuentaSeleccionada.saldo + interesAplicado;
             saldoAntesDelRetiro = nuevoSaldo;
-            
-            // PASO 3: Registrar el interés como un movimiento
+
             const movimientoInteres = {
                 tipo: 'INTERES',
                 valor: interesAplicado,
@@ -195,19 +193,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             cuentaSeleccionada.movimientos.unshift(movimientoInteres);
             
-            // PASO 4: Realizar el retiro
+         
             nuevoSaldo = nuevoSaldo - monto;
             
         } else {
-            // Cuenta corriente: verificar sobregiro
+    
             if (monto > cuentaSeleccionada.saldo) {
                 usoSobregiro = true;
                 montoSobregiro = monto - cuentaSeleccionada.saldo;
             }
             nuevoSaldo = cuentaSeleccionada.saldo - monto;
         }
-        
-        // Registrar movimiento de retiro
+
         const movimientoRetiro = {
             tipo: 'RETIRO',
             valor: monto,
@@ -220,8 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cuentaSeleccionada.movimientos = [];
         }
         cuentaSeleccionada.movimientos.unshift(movimientoRetiro);
-        
-        // Actualizar saldo final
+
         cuentaSeleccionada.saldo = nuevoSaldo;
         
         const usuarios = obtenerUsuarios();
@@ -231,8 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         guardarUsuarios(usuarios);
         actualizarSesion(usuarios[userIndex]);
-        
-        // Actualizar saldo mostrado en la tarjeta
+ 
         const cards = document.querySelectorAll('.account-card');
         usuario.cuentas.forEach(function(cuenta, idx) {
             if (cuenta.numeroCuenta === cuentaSeleccionada.numeroCuenta) {

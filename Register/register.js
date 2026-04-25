@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarMensaje('La identificación ya está registrada', true);
             return;
         }
-        
-        // Crear usuario sin cuentas
+
         const nuevoUsuario = {
             id: Date.now(),
             identificacion: identificacion,

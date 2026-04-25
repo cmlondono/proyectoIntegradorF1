@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${diaSemana} ${dia} ${mes}, ${hora}:${minutos}`;
     }
     
-    // Mostrar popup de crear
     function mostrarPopupCrear() {
         document.getElementById('crearPopup').style.display = 'flex';
         document.getElementById('tipoProducto').value = 'ahorros';
@@ -305,8 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
-    // Eventos de los popups
+
     document.getElementById('crearProductoBtn').addEventListener('click', mostrarPopupCrear);
     document.getElementById('confirmarCrear').addEventListener('click', crearProducto);
     document.getElementById('cancelarCrear').addEventListener('click', ocultarPopupCrear);
@@ -319,8 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === crearPopup) ocultarPopupCrear();
         if (e.target === eliminarPopup) ocultarPopupEliminar();
     });
-    
-    // Navegación
+
     document.getElementById('btnConsultarSaldo')?.addEventListener('click', () => window.location.href = '../SaldoActual/saldoActual.html');
     document.getElementById('btnConsignar')?.addEventListener('click', () => window.location.href = '../ConsignarDinero/consignarDinero.html');
     document.getElementById('btnRetirar')?.addEventListener('click', () => window.location.href = '../RetirarDinero/retirarDinero.html');

@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             return c.numeroCuenta === numero;
                         });
                         if (cuentaEncontrada) {
-                            // Verificar que no sea la misma cuenta del usuario actual
+
                             if (user.id === usuario.id && cuentaEncontrada.numeroCuenta === cuentaOrigen.numeroCuenta) {
                                 validacionDiv.innerHTML = '<span style="color:#c62828;">No puedes transferir a tu misma cuenta</span>';
                                 cuentaDestino = null;
@@ -247,7 +247,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Eventos para tipo de transferencia
     const tipoOptions = document.querySelectorAll('.transfer-option');
     tipoOptions.forEach(function (opt) {
         opt.addEventListener('click', function () {
@@ -260,7 +259,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Realizar transferencia
     transferirBtn.addEventListener('click', function () {
         if (!cuentaOrigen) {
             mostrarMensaje('Seleccione una cuenta de origen', true);
@@ -286,23 +284,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Verificar que no sea la misma cuenta
         if (cuentaOrigen.numeroCuenta === cuentaDestino.numeroCuenta) {
             mostrarMensaje('No se puede transferir a la misma cuenta', true);
             return;
         }
 
-        //transferencias entre cuentas propias, verificar que no sean del mismo tipo
         if (tipoTransferencia === 'mismas' && cuentaOrigen.tipo === cuentaDestino.tipo) {
             mostrarMensaje('No se puede transferir entre cuentas del mismo tipo (Ahorros a Ahorros o Corriente a Corriente)', true);
             return;
         }
 
-        // Realizar transferencia
         const nuevoSaldoOrigen = cuentaOrigen.saldo - monto;
         const nuevoSaldoDestino = cuentaDestino.saldo + monto;
 
-        // Registrar movimiento en origen
         const movimientoOrigen = {
             tipo: TipoMovimiento.TRANSFERENCIA_OUT,
             valor: monto,
@@ -311,7 +305,6 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: 'Transferencia a cuenta ' + cuentaDestino.numeroCuenta
         };
 
-        // Registrar movimiento en destino
         const movimientoDestino = {
             tipo: TipoMovimiento.TRANSFERENCIA_IN,
             valor: monto,

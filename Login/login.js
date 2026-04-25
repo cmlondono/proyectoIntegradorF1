@@ -3,14 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mensajeError = document.createElement('div');
     
     mensajeError.style.cssText = 'background: #ffebee; color: #c62828; padding: 10px; border-radius: 8px; margin: 10px 0; font-size: 13px; display: none;';
-    
-    // Insertar mensaje de error antes del botón
+
     const btnLogin = document.querySelector('.btn');
     if (btnLogin) {
         btnLogin.parentNode.insertBefore(mensajeError, btnLogin);
     }
-    
-    // Crear contador de intentos
+
     const contadorIntentos = document.createElement('div');
     contadorIntentos.style.cssText = 'font-size: 12px; color: #666; margin-top: 5px; text-align: right;';
     if (btnLogin) {
@@ -18,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     let intentos = 0;
-    
-    // Función para obtener usuarios del localStorage
+
     function obtenerUsuarios() {
         const usuarios = localStorage.getItem('usuarios');
         if (usuarios) {
@@ -27,13 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return [];
     }
-    
-    // Función para guardar usuarios
+
     function guardarUsuarios(usuarios) {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
-    
-    // Función para actualizar contador
+
     function actualizarContador() {
         const restantes = 3 - intentos;
         contadorIntentos.textContent = 'Intentos restantes: ' + restantes;
@@ -43,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contadorIntentos.style.color = '#666';
         }
     }
-    
-    // Función para mostrar error
+
     function mostrarError(mensaje) {
         mensajeError.textContent = mensaje;
         mensajeError.style.display = 'block';

@@ -332,7 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Navegación
     document.getElementById('backLink')?.addEventListener('click', function (e) {
         e.preventDefault();
         window.location.href = '../Principal/principal.html';

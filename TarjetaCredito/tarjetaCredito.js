@@ -349,7 +349,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '../Perfil/perfil.html';
     });
 
-    // Inicializar
     cargarTarjetas();
     cargarBotonesCuotas();
 });

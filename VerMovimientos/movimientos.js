@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (movimiento.tipo === TipoMovimiento.PAGO_TC) {
             return { icono: '💳', clase: 'green' };
         }
-        // Mostrar imagen de interés si el tipo es INTERES
         if (movimiento.tipo === TipoMovimiento.INTERES) {
             return { icono: '../IMAGENES/INTERES.png', clase: 'blue', esImagen: true };
         }
@@ -205,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Eventos de filtrado
     filterButtons.forEach(function(btn) {
         btn.addEventListener('click', function() {
             filterButtons.forEach(function(b) {
@@ -217,7 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Exportar
     if (exportBtn) {
         exportBtn.addEventListener('click', function() {
             const todosMovimientos = obtenerTodosMovimientos();
@@ -244,8 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Exportación completada');
         });
     }
-    
-    // Navegación
+
     document.getElementById('backLink')?.addEventListener('click', function(e) {
         e.preventDefault();
         window.location.href = '../Principal/principal.html';

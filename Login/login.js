@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
     
-    // Evento submit del formulario (NO click del botón)
+    
     form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Esto evita que la página se recargue
+        e.preventDefault(); 
         
         const usuarioInput = document.getElementById('usuario');
         const passInput = document.getElementById('contrasena');
@@ -85,36 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return;
         }
-        
-        // Verificar si está bloqueado
+
         if (usuarioEncontrado.bloqueado) {
             mostrarError('Cuenta bloqueada. Contacte al administrador.');
             return;
         }
-        
-        // Verificar contraseña
+
         if (usuarioEncontrado.contrasena === contrasena) {
-            // Login exitoso
+         
             intentos = 0;
             actualizarContador();
             
-            // Guardar sesión
             localStorage.setItem('sesionActual', JSON.stringify(usuarioEncontrado));
-            
-            // Guardar "recordarme"
+          
             if (recordarme && recordarme.checked) {
                 localStorage.setItem('usuarioRecordado', usuario);
             } else {
                 localStorage.removeItem('usuarioRecordado');
             }
             
-            // Redirigir al panel principal
             window.location.href = '../Principal/principal.html';
         } else {
             intentos++;
             actualizarContador();
             
-            // Actualizar intentos fallidos en localStorage
             usuarioEncontrado.intentosFallidos = intentos;
             if (intentos >= 3) {
                 usuarioEncontrado.bloqueado = true;
@@ -126,14 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 mostrarError('Contraseña incorrecta. Intento ' + intentos + '/3');
             }
             
-            // Guardar cambios
             const index = usuarios.findIndex(u => u.id === usuarioEncontrado.id);
             usuarios[index] = usuarioEncontrado;
             guardarUsuarios(usuarios);
         }
     });
     
-    // Cargar usuario recordado
     const usuarioRecordado = localStorage.getItem('usuarioRecordado');
     if (usuarioRecordado) {
         const usuarioInput = document.getElementById('usuario');
@@ -145,8 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
             recordarme.checked = true;
         }
     }
-    
-    // Botón de volver al inicio
     const backLink = document.querySelector('.back');
     if (backLink) {
         backLink.addEventListener('click', function(e) {
@@ -155,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Link de registro
     const registerLink = document.querySelector('.links a');
     if (registerLink) {
         registerLink.addEventListener('click', function(e) {

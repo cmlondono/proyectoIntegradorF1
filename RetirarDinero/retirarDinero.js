@@ -224,7 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar saldo final
         cuentaSeleccionada.saldo = nuevoSaldo;
         
-        // Guardar en localStorage
         const usuarios = obtenerUsuarios();
         const userIndex = usuarios.findIndex(u => u.id === usuario.id);
         const cuentaIndex = usuarios[userIndex].cuentas.findIndex(c => c.numeroCuenta === cuentaSeleccionada.numeroCuenta);
@@ -244,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Construir mensaje de éxito
         let mensajeExito = '';
         if (cuentaSeleccionada.tipo === 'ahorros') {
             mensajeExito = 'Interés aplicado: +' + formatearMoneda(interesAplicado) + '. ';

@@ -320,32 +320,27 @@ document.addEventListener('DOMContentLoaded', function () {
             descripcion: 'Transferencia de cuenta ' + cuentaOrigen.numeroCuenta
         };
 
-        // Actualizar saldos
         cuentaOrigen.saldo = nuevoSaldoOrigen;
         cuentaDestino.saldo = nuevoSaldoDestino;
 
-        // Agregar movimientos
         if (!cuentaOrigen.movimientos) cuentaOrigen.movimientos = [];
         if (!cuentaDestino.movimientos) cuentaDestino.movimientos = [];
 
         cuentaOrigen.movimientos.unshift(movimientoOrigen);
         cuentaDestino.movimientos.unshift(movimientoDestino);
 
-        // Actualizar en localStorage
         const usuarios = obtenerUsuarios();
 
-        // Actualizar cuenta origen
         const userOrigenIndex = usuarios.findIndex(u => u.id === usuario.id);
         const cuentaOrigenIndex = usuarios[userOrigenIndex].cuentas.findIndex(c => c.numeroCuenta === cuentaOrigen.numeroCuenta);
         usuarios[userOrigenIndex].cuentas[cuentaOrigenIndex] = cuentaOrigen;
 
-        // Actualizar cuenta destino
         if (tipoTransferencia === 'mismas') {
-            // Es cuenta propia
+     
             const cuentaDestinoIndex = usuarios[userOrigenIndex].cuentas.findIndex(c => c.numeroCuenta === cuentaDestino.numeroCuenta);
             usuarios[userOrigenIndex].cuentas[cuentaDestinoIndex] = cuentaDestino;
         } else {
-            // Es cuenta de otro usuario
+          
             const userDestinoIndex = usuarios.findIndex(u => {
                 return u.cuentas.some(c => c.numeroCuenta === cuentaDestino.numeroCuenta);
             });
@@ -358,7 +353,6 @@ document.addEventListener('DOMContentLoaded', function () {
         guardarUsuarios(usuarios);
         actualizarSesion(usuarios[userOrigenIndex]);
 
-        // Actualizar saldo mostrado en origen
         const origenCards = document.querySelectorAll('#origenGrid .account-card');
         usuario.cuentas.forEach(function (cuenta, idx) {
             if (cuenta.numeroCuenta === cuentaOrigen.numeroCuenta) {
@@ -373,11 +367,9 @@ document.addEventListener('DOMContentLoaded', function () {
         montoInput.value = '0';
         actualizarHint();
 
-        // Recargar destinos para actualizar saldos
         cargarDestinos();
     });
 
-    // Navegación
     const backLink = document.getElementById('backLink');
     if (backLink) {
         backLink.addEventListener('click', function (e) {
@@ -403,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Inicializar
     cargarCuentasOrigen();
     cargarDestinos();
 });

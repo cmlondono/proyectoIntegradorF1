@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         optsContainer.innerHTML = '';
         
-        // Mostrar solo cuentas de banco sin las tarjetas
         const cuentasBancarias = usuario.cuentas;
         
         if (cuentasBancarias.length === 0) {
@@ -179,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Ocultar/mostrar saldo con el ojo
     if (eyeBtn) {
         eyeBtn.addEventListener('click', function() {
             ocultarSaldo = !ocultarSaldo;
@@ -187,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navegación
     const backLink = document.getElementById('backLink');
     if (backLink) {
         backLink.addEventListener('click', function(e) {
@@ -213,6 +210,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Inicializar
     cargarCuentas();
 });

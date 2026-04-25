@@ -83,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contrasena: contrasena,
             intentosFallidos: 0,
             bloqueado: false,
-            cuentas: [],      // Lista vacía de cuentas
-            tarjetas: []      // Lista vacía de tarjetas
+            cuentas: [],     
+            tarjetas: []     
         };
         
         usuarios.push(nuevoUsuario);
